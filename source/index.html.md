@@ -13,12 +13,12 @@ toc_footers:
   - <a href='mailto:developers@ando.la?subject=Solicitud de API Key&body=Hola, mi nombre es _____________ y solicito una API Key para desarrollar ________________________________________ para la empresa _______________ radicada en ____________________ . Mi email de contacto es __________________ y telefono __________________ .'>Request Full API Access</a>
 
 includes:
-  - errors
   - authentication
   - account
   - delivery
   - budget
   - tracking
+  - errors
 
 search: true
 ---
