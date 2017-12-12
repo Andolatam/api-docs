@@ -1,20 +1,24 @@
 # Errors
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-The Kittn API uses the following error codes:
+Our API libraries raise exceptions for many reasons, such as a failed charge, invalid parameters, authentication errors, and network unavailability. We recommend writing code that gracefully handles all possible API exceptions.
 
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request sucks.
+100 | Non-existent shipment.
+101 | Shipping Canceled.
+102 | Shipping Closed.
+104 | There is no Carrier to make the Shipment.
+200 | Non-existent User.
+300 | Suspended carrier.
+301 | Suspended carrier.
+400 | Non-existent carrier medium.
 401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
+403 | Forbidden -- The request is forbidden for your access level, contact the developer support.
+404 | Not Found -- The request is not longer active, or does not exist.
+405 | Method Not Allowed -- You tried to access a request with an invalid method.
+406 | Not Acceptable -- You requested a format that isn't JSON.
+410 | Gone -- The endpoint requested has been removed from our servers.
+429 | Too Many Requests -- You're requesting too much information! Slow down!
+500 | MercadoPago Error.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
