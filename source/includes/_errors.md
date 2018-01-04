@@ -22,3 +22,22 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too much information! Slow down!
 500 | MercadoPago Error.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+600 |	The package is too big.
+601 |	Wrong budget params.
+602 |	Promo Code does not exist.
+603 |	Transport does not exist.
+604 |	No available riders using this method.
+605 |	Location does not exist.
+606 |	Element `payee` must have values `PAGA_RECEPTOR` or  `PAGA_EMISOR`.
+607 |	Wrong email/password.
+608 |	User already exists.
+609 |	Incomplete params.
+610 |	Error Starting shipping.
+611 |	Error Cancelling shipping.
+612 |	Year must be 4 digits long.
+613 |	The Card is invalid.
+614 |	Error adding Credit Card to the user.
+615 |	Shipment not found.
+616 |	Error getting the shipment history.
+617 |	Error deleting Card.
+618 |	Error getting cards.
