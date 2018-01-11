@@ -4,7 +4,7 @@
 
 ```shell
 curl --request GET \
-  --url 'https://api.ando.la/v1/login?email=raulmatadero@gmail.com&password=raul1234'
+  --url 'https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd'
 ```
 
 ```javascript
@@ -42,7 +42,7 @@ req.end();
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.ando.la/v1/login?email=raulmatadero@gmail.com&password=raul1234")
+url = URI("https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -52,25 +52,13 @@ response = http.request(request)
 puts response.read_body
 ```
 
-```python
-import requests
-
-url = "https://api.ando.la/v1/login"
-
-querystring = {"email":"raulmatadero@gmail.com","password":"raul1234"}
-
-response = requests.request("GET", url, params=querystring)
-
-print(response.text)
-```
-
 ```php
 <?php
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.ando.la/v1/login?email=raulmatadero@gmail.com&password=raul1234",
+  CURLOPT_URL => "https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -102,7 +90,7 @@ import (
 
 func main() {
 
-	url := "https://api.ando.la/v1/login?email=raulmatadero@gmail.com&password=raul1234"
+	url := "https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd"
 
 	req, _ := http.NewRequest("GET", url, nil)
 
@@ -121,7 +109,7 @@ First ask for an access token, using your login credentials. a TOKEN will be ret
 
 ###HTTP Request
 
-`GET https://api.ando.la/v1/login?email=raulmatadero@gmail.com&password=raul1234`
+`GET https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd`
 
 Parameter | Description
 --------- | -----------

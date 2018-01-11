@@ -4,8 +4,8 @@
 
 ```shell
 curl --request GET \
-  --url 'https://api.ando.la/v1/user/paymentMethods?userID=306' \
-  --header 'Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4' \
+  --url 'https://api.ando.la/v1/user/paymentMethods' \
+  --header 'Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw' \
   --header 'Content-Type: application/json'
 ```
 
@@ -24,7 +24,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    "Authorization": "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
   }
 };
 
@@ -48,13 +48,13 @@ req.end();
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.ando.la/v1/user/paymentMethods?userID=306")
+url = URI("https://api.ando.la/v1/user/paymentMethods")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4'
+request["Authorization"] = 'Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw'
 
 response = http.request(request)
 puts response.read_body
@@ -65,14 +65,12 @@ import requests
 
 url = "https://api.ando.la/v1/user/paymentMethods"
 
-querystring = {"userID":"306"}
-
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    'Authorization': "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
     }
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 ```
@@ -83,7 +81,7 @@ print(response.text)
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.ando.la/v1/user/paymentMethods?userID=306",
+  CURLOPT_URL => "https://api.ando.la/v1/user/paymentMethods",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -91,7 +89,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4",
+    "Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw",
     "Content-Type: application/json"
   ),
 ));
@@ -119,12 +117,12 @@ import (
 
 func main() {
 
-	url := "https://api.ando.la/v1/user/paymentMethods?userID=306"
+	url := "https://api.ando.la/v1/user/paymentMethods"
 
 	req, _ := http.NewRequest("GET", url, nil)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4")
+	req.Header.Add("Authorization", "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -139,18 +137,12 @@ func main() {
 
 ### HTTP Request
 
-`GET https://api.ando.la/v1/user/paymentMethods?userID=306`
+`GET https://api.ando.la/v1/user/paymentMethods`
 
 Header | Content
 --------- | -----------
 Authorization | Bearer 4b73b11dc60ee75959eca2c117614e9741dfc99a
 Content-type | application/json
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-userID | UserID whose cards will be retrieved.
 
 
 ## Add a Card
@@ -158,17 +150,16 @@ userID | UserID whose cards will be retrieved.
 ```shell
 curl --request POST \
   --url 'https://api.ando.la/v1/user/paymentMethods/add' \
-  --header 'Authorization: Bearer kBxNJK2qPSDaq4AvArlta7I4J8Rl3cdY3Fl2CdeJ_aNFCWJS-ZZs7zUJ_5fX5JWQiaD0eOC4-fXJTZ4Li59jw7_A7IRFwIAvjkxXRl5Umwhtu_o8xY9EX5m5rj25A_GegYwKoEzqjAT2fHYr8YZtTstClAw51MSI-7VhhCejbcTLdw6w8GHGM9sbILwCfFjrx1XJ0C0YmR1wHcL6ghmRm50OGdHa3ZVlAJ7LaVdKJfq5tP5IHwMNKzJeQVBZ4Vf6PZ_HL7YPSbJ8zyO5jqf-CamfMYh8mvS-YMTRC_Un3Zk' \
+  --header 'Authorization: Bearer RmZkF_zqU0zSiJkZxwigcZ_68bYzr3gnXfopPZ7Lf6xZYA7cknhMcq9E4hpD9jtQ1noL9rePoMtZ0Yyod0LWSQZNayhfoU_K_kgbTahp8SsAl_yYAY2YeM4Eb7xKwV4963WFLm7JAU_eQdEmAjvK1iJrt0b9wH11K4VcINjGYO_xopL8-jLchKF3UcC5GkkzLBmUYpMPuqi60Z3SDixg-pzI_UMaR4vznre9a6tMdzdTfnaCtk3lg7qr-77cDie6fjBYIftgZXdfNH22uuJ4oCY-GCnz_1swIUKiofL6JD0' \
   --header 'Content-Type: application/json' \
-  --data '{    "cardNumber": 4540730016147846,
-      "securityCode": "796",
+  --data '{    "cardNumber": 4540000000000000,
+      "securityCode": "111",
       "expiration_month":10,
       "expiration_year": 2021,  
-      "cardholder":"axel candia",
+      "cardholder":"John Doe",
       "PersonalID_type":"DNI",
-      "PersonalID_number":39908763,
-      "cardType":"visa",
-      "email":"nahuelcandiaasdasdasd@gmail.com"
+      "PersonalID_number":39000000,
+      "cardType":"VISA"
 }
  '
 ```
@@ -189,7 +180,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer kBxNJK2qPSDaq4AvArlta7I4J8Rl3cdY3Fl2CdeJ_aNFCWJS-ZZs7zUJ_5fX5JWQiaD0eOC4-fXJTZ4Li59jw7_A7IRFwIAvjkxXRl5Umwhtu_o8xY9EX5m5rj25A_GegYwKoEzqjAT2fHYr8YZtTstClAw51MSI-7VhhCejbcTLdw6w8GHGM9sbILwCfFjrx1XJ0C0YmR1wHcL6ghmRm50OGdHa3ZVlAJ7LaVdKJfq5tP5IHwMNKzJeQVBZ4Vf6PZ_HL7YPSbJ8zyO5jqf-CamfMYh8mvS-YMTRC_Un3Zk"
+    "Authorization": "Bearer RmZkF_zqU0zSiJkZxwigcZ_68bYzr3gnXfopPZ7Lf6xZYA7cknhMcq9E4hpD9jtQ1noL9rePoMtZ0Yyod0LWSQZNayhfoU_K_kgbTahp8SsAl_yYAY2YeM4Eb7xKwV4963WFLm7JAU_eQdEmAjvK1iJrt0b9wH11K4VcINjGYO_xopL8-jLchKF3UcC5GkkzLBmUYpMPuqi60Z3SDixg-pzI_UMaR4vznre9a6tMdzdTfnaCtk3lg7qr-77cDie6fjBYIftgZXdfNH22uuJ4oCY-GCnz_1swIUKiofL6JD0"
   }
 };
 
@@ -206,15 +197,14 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ cardNumber: 4540730016147846,
-  securityCode: '796',
+req.write(JSON.stringify({ cardNumber: 4540000000000000,
+  securityCode: '111',
   expiration_month: 10,
   expiration_year: 2021,
-  cardholder: 'axel candia',
+  cardholder: 'John Doe',
   PersonalID_type: 'DNI',
-  PersonalID_number: 39908763,
-  cardType: 'visa',
-  email: 'nahuelcandiaasdasdasd@gmail.com' }));
+  PersonalID_number: 39000000,
+  cardType: 'VISA' }));
 req.end();
 ```
 
@@ -228,8 +218,8 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer kBxNJK2qPSDaq4AvArlta7I4J8Rl3cdY3Fl2CdeJ_aNFCWJS-ZZs7zUJ_5fX5JWQiaD0eOC4-fXJTZ4Li59jw7_A7IRFwIAvjkxXRl5Umwhtu_o8xY9EX5m5rj25A_GegYwKoEzqjAT2fHYr8YZtTstClAw51MSI-7VhhCejbcTLdw6w8GHGM9sbILwCfFjrx1XJ0C0YmR1wHcL6ghmRm50OGdHa3ZVlAJ7LaVdKJfq5tP5IHwMNKzJeQVBZ4Vf6PZ_HL7YPSbJ8zyO5jqf-CamfMYh8mvS-YMTRC_Un3Zk'
-request.body = "{    \"cardNumber\": 4540730016147846, \n      \"securityCode\": \"796\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"axel candia\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39908763,\n      \"cardType\":\"visa\",\n      \"email\":\"nahuelcandiaasdasdasd@gmail.com\"\n}\n "
+request["Authorization"] = 'Bearer RmZkF_zqU0zSiJkZxwigcZ_68bYzr3gnXfopPZ7Lf6xZYA7cknhMcq9E4hpD9jtQ1noL9rePoMtZ0Yyod0LWSQZNayhfoU_K_kgbTahp8SsAl_yYAY2YeM4Eb7xKwV4963WFLm7JAU_eQdEmAjvK1iJrt0b9wH11K4VcINjGYO_xopL8-jLchKF3UcC5GkkzLBmUYpMPuqi60Z3SDixg-pzI_UMaR4vznre9a6tMdzdTfnaCtk3lg7qr-77cDie6fjBYIftgZXdfNH22uuJ4oCY-GCnz_1swIUKiofL6JD0'
+request.body = "{    \"cardNumber\": 4540000000000000, \n      \"securityCode\": \"111\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"John Doe\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39000000,\n      \"cardType\":\"VISA\"\n}\n "
 
 response = http.request(request)
 puts response.read_body
@@ -240,10 +230,10 @@ import requests
 
 url = "https://api.ando.la/v1/user/paymentMethods/add"
 
-payload = "{    \"cardNumber\": 4540730016147846, \n      \"securityCode\": \"796\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"axel candia\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39908763,\n      \"cardType\":\"visa\",\n      \"email\":\"nahuelcandiaasdasdasd@gmail.com\"\n}\n "
+payload = "{    \"cardNumber\": 4540000000000000, \n      \"securityCode\": \"111\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"John Doe\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39000000,\n      \"cardType\":\"VISA\"\n}\n "
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer kBxNJK2qPSDaq4AvArlta7I4J8Rl3cdY3Fl2CdeJ_aNFCWJS-ZZs7zUJ_5fX5JWQiaD0eOC4-fXJTZ4Li59jw7_A7IRFwIAvjkxXRl5Umwhtu_o8xY9EX5m5rj25A_GegYwKoEzqjAT2fHYr8YZtTstClAw51MSI-7VhhCejbcTLdw6w8GHGM9sbILwCfFjrx1XJ0C0YmR1wHcL6ghmRm50OGdHa3ZVlAJ7LaVdKJfq5tP5IHwMNKzJeQVBZ4Vf6PZ_HL7YPSbJ8zyO5jqf-CamfMYh8mvS-YMTRC_Un3Zk"
+    'Authorization': "Bearer RmZkF_zqU0zSiJkZxwigcZ_68bYzr3gnXfopPZ7Lf6xZYA7cknhMcq9E4hpD9jtQ1noL9rePoMtZ0Yyod0LWSQZNayhfoU_K_kgbTahp8SsAl_yYAY2YeM4Eb7xKwV4963WFLm7JAU_eQdEmAjvK1iJrt0b9wH11K4VcINjGYO_xopL8-jLchKF3UcC5GkkzLBmUYpMPuqi60Z3SDixg-pzI_UMaR4vznre9a6tMdzdTfnaCtk3lg7qr-77cDie6fjBYIftgZXdfNH22uuJ4oCY-GCnz_1swIUKiofL6JD0"
     }
 
 response = requests.request("POST", url, data=payload, headers=headers)
@@ -264,9 +254,9 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{    \"cardNumber\": 4540730016147846, \n      \"securityCode\": \"796\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"axel candia\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39908763,\n      \"cardType\":\"visa\",\n      \"email\":\"nahuelcandiaasdasdasd@gmail.com\"\n}\n ",
+  CURLOPT_POSTFIELDS => "{    \"cardNumber\": 4540000000000000, \n      \"securityCode\": \"111\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"John Doe\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39000000,\n      \"cardType\":\"VISA\"\n}\n ",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer kBxNJK2qPSDaq4AvArlta7I4J8Rl3cdY3Fl2CdeJ_aNFCWJS-ZZs7zUJ_5fX5JWQiaD0eOC4-fXJTZ4Li59jw7_A7IRFwIAvjkxXRl5Umwhtu_o8xY9EX5m5rj25A_GegYwKoEzqjAT2fHYr8YZtTstClAw51MSI-7VhhCejbcTLdw6w8GHGM9sbILwCfFjrx1XJ0C0YmR1wHcL6ghmRm50OGdHa3ZVlAJ7LaVdKJfq5tP5IHwMNKzJeQVBZ4Vf6PZ_HL7YPSbJ8zyO5jqf-CamfMYh8mvS-YMTRC_Un3Zk",
+    "Authorization: Bearer RmZkF_zqU0zSiJkZxwigcZ_68bYzr3gnXfopPZ7Lf6xZYA7cknhMcq9E4hpD9jtQ1noL9rePoMtZ0Yyod0LWSQZNayhfoU_K_kgbTahp8SsAl_yYAY2YeM4Eb7xKwV4963WFLm7JAU_eQdEmAjvK1iJrt0b9wH11K4VcINjGYO_xopL8-jLchKF3UcC5GkkzLBmUYpMPuqi60Z3SDixg-pzI_UMaR4vznre9a6tMdzdTfnaCtk3lg7qr-77cDie6fjBYIftgZXdfNH22uuJ4oCY-GCnz_1swIUKiofL6JD0",
     "Content-Type: application/json"
   ),
 ));
@@ -297,12 +287,12 @@ func main() {
 
 	url := "https://api.ando.la/v1/user/paymentMethods/add"
 
-	payload := strings.NewReader("{    \"cardNumber\": 4540730016147846, \n      \"securityCode\": \"796\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"axel candia\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39908763,\n      \"cardType\":\"visa\",\n      \"email\":\"nahuelcandiaasdasdasd@gmail.com\"\n}\n ")
+	payload := strings.NewReader("{    \"cardNumber\": 4540000000000000, \n      \"securityCode\": \"111\", \n      \"expiration_month\":10,\n      \"expiration_year\": 2021,  \n      \"cardholder\":\"John Doe\",\n      \"PersonalID_type\":\"DNI\",\n      \"PersonalID_number\":39000000,\n      \"cardType\":\"VISA\"\n}\n ")
 
 	req, _ := http.NewRequest("POST", url, payload)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer kBxNJK2qPSDaq4AvArlta7I4J8Rl3cdY3Fl2CdeJ_aNFCWJS-ZZs7zUJ_5fX5JWQiaD0eOC4-fXJTZ4Li59jw7_A7IRFwIAvjkxXRl5Umwhtu_o8xY9EX5m5rj25A_GegYwKoEzqjAT2fHYr8YZtTstClAw51MSI-7VhhCejbcTLdw6w8GHGM9sbILwCfFjrx1XJ0C0YmR1wHcL6ghmRm50OGdHa3ZVlAJ7LaVdKJfq5tP5IHwMNKzJeQVBZ4Vf6PZ_HL7YPSbJ8zyO5jqf-CamfMYh8mvS-YMTRC_Un3Zk")
+	req.Header.Add("Authorization", "Bearer RmZkF_zqU0zSiJkZxwigcZ_68bYzr3gnXfopPZ7Lf6xZYA7cknhMcq9E4hpD9jtQ1noL9rePoMtZ0Yyod0LWSQZNayhfoU_K_kgbTahp8SsAl_yYAY2YeM4Eb7xKwV4963WFLm7JAU_eQdEmAjvK1iJrt0b9wH11K4VcINjGYO_xopL8-jLchKF3UcC5GkkzLBmUYpMPuqi60Z3SDixg-pzI_UMaR4vznre9a6tMdzdTfnaCtk3lg7qr-77cDie6fjBYIftgZXdfNH22uuJ4oCY-GCnz_1swIUKiofL6JD0")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -317,15 +307,14 @@ func main() {
 
 ```json
 {
-  "cardNumber": 4540730016147846,
-  "securityCode": "796",
+  "cardNumber": 4540000000000000,
+  "securityCode": "111",
   "expiration_month":10,
   "expiration_year": 2021,  
-  "cardholder":"axel candia",
+  "cardholder":"John Doe",
   "PersonalID_type":"DNI",
-  "PersonalID_number":39908763,
-  "cardType":"visa",
-  "email":"nahuelcandiaasdasdasd@gmail.com"
+  "PersonalID_number":39000000,
+  "cardType":"VISA"
 }
 ```
 ### HTTP Request
@@ -349,18 +338,16 @@ cardholder | Full Name of the cardholder.
 PersonalID_type | Type of Personal ID, can be `DNI`, `CUIT`, `Passport`.
 PersonalID_number | Personal ID number.
 cardType | Type of the card can be `VISA`, `Mastercard`, etc.
-email | Email of the customer.
 
 ## Delete a Card
 
 ```shell
 curl --request DELETE \
   --url 'https://api.ando.la/v1/user/paymentMethods/remove' \
-  --header 'Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4' \
+  --header 'Authorization: Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg' \
   --header 'Content-Type: application/json' \
   --data '{
-  "userID":306,
-  "cardId":12
+  "cardId":243715685
 }'
 ```
 
@@ -380,7 +367,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    "Authorization": "Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg"
   }
 };
 
@@ -397,7 +384,7 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ userID: 306, cardId: 12 }));
+req.write(JSON.stringify({ cardId: 243715685 }));
 req.end();
 ```
 
@@ -411,8 +398,8 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Delete.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4'
-request.body = "{\r\n  \"userID\":306,\r\n  \"cardId\":12\r\n}"
+request["Authorization"] = 'Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg'
+request.body = "{ \r\n  \"cardId\":243715685\r\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -423,10 +410,10 @@ import requests
 
 url = "https://api.ando.la/v1/user/paymentMethods/remove"
 
-payload = "{\r\n  \"userID\":306,\r\n  \"cardId\":12\r\n}"
+payload = "{ \r\n  \"cardId\":243715685\r\n}"
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    'Authorization': "Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg"
     }
 
 response = requests.request("DELETE", url, data=payload, headers=headers)
@@ -447,9 +434,9 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "DELETE",
-  CURLOPT_POSTFIELDS => "{\r\n  \"userID\":306,\r\n  \"cardId\":12\r\n}",
+  CURLOPT_POSTFIELDS => "{ \r\n  \"cardId\":243715685\r\n}",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4",
+    "Authorization: Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg",
     "Content-Type: application/json"
   ),
 ));
@@ -480,12 +467,12 @@ func main() {
 
 	url := "https://api.ando.la/v1/user/paymentMethods/remove"
 
-	payload := strings.NewReader("{\r\n  \"userID\":306,\r\n  \"cardId\":12\r\n}")
+	payload := strings.NewReader("{ \r\n  \"cardId\":243715685\r\n}")
 
 	req, _ := http.NewRequest("DELETE", url, payload)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4")
+	req.Header.Add("Authorization", "Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -500,7 +487,6 @@ func main() {
 
 ```json
 {
-  "userID":306,
   "cardId":12
 }
 ```
@@ -517,5 +503,4 @@ Content-type | application/json
 
 Parameter | Description
 --------- | -----------
-userID | ID of the user which card shall be deleted.
 cardId | ID of the card to delete.

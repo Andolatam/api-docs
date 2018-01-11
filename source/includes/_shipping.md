@@ -4,8 +4,8 @@
 
 ```shell
 curl --request GET \
-  --url 'https://api.ando.la/v1/shipment/history?userId=306' \
-  --header 'Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4' \
+  --url 'https://api.ando.la/v1/shipment/history' \
+  --header 'Authorization: Bearer D93fM7thTTVrTYmqpDMT2o5ReUxL6FeOM1hoZtOcgYaS8ds1d9qjWOoOn_mUFh7RBr5DuJG36AOLHf6Eqx5IqDcyfjcVkWHw5QO8ZflZjn8B8fbabRfiEujX7tWY-0jZnO9zhQqrMuPoTuvAaGerh_SASgQRlXI6y4LNF2Pyu8Z9iO4slihAawVM5R356C83TbDPpxqPyHhksTFQTBqELtjB8bCxDcQDkfSf4AkTpFDpFL8OTP0-OKZ9AYPoNfbUnr02dDW3SbBcFqPVLgPbkYiuUJojaO4XYGbSY7QwUa4' \
   --header 'Content-Type: application/json'
 ```
 
@@ -24,7 +24,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    "Authorization": "Bearer D93fM7thTTVrTYmqpDMT2o5ReUxL6FeOM1hoZtOcgYaS8ds1d9qjWOoOn_mUFh7RBr5DuJG36AOLHf6Eqx5IqDcyfjcVkWHw5QO8ZflZjn8B8fbabRfiEujX7tWY-0jZnO9zhQqrMuPoTuvAaGerh_SASgQRlXI6y4LNF2Pyu8Z9iO4slihAawVM5R356C83TbDPpxqPyHhksTFQTBqELtjB8bCxDcQDkfSf4AkTpFDpFL8OTP0-OKZ9AYPoNfbUnr02dDW3SbBcFqPVLgPbkYiuUJojaO4XYGbSY7QwUa4"
   }
 };
 
@@ -48,13 +48,13 @@ req.end();
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.ando.la/v1/shipment/history?userId=306")
+url = URI("https://api.ando.la/v1/shipment/history")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4'
+request["Authorization"] = 'Bearer D93fM7thTTVrTYmqpDMT2o5ReUxL6FeOM1hoZtOcgYaS8ds1d9qjWOoOn_mUFh7RBr5DuJG36AOLHf6Eqx5IqDcyfjcVkWHw5QO8ZflZjn8B8fbabRfiEujX7tWY-0jZnO9zhQqrMuPoTuvAaGerh_SASgQRlXI6y4LNF2Pyu8Z9iO4slihAawVM5R356C83TbDPpxqPyHhksTFQTBqELtjB8bCxDcQDkfSf4AkTpFDpFL8OTP0-OKZ9AYPoNfbUnr02dDW3SbBcFqPVLgPbkYiuUJojaO4XYGbSY7QwUa4'
 
 response = http.request(request)
 puts response.read_body
@@ -65,14 +65,12 @@ import requests
 
 url = "https://api.ando.la/v1/shipment/history"
 
-querystring = {"userId":"306"}
-
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    'Authorization': "Bearer D93fM7thTTVrTYmqpDMT2o5ReUxL6FeOM1hoZtOcgYaS8ds1d9qjWOoOn_mUFh7RBr5DuJG36AOLHf6Eqx5IqDcyfjcVkWHw5QO8ZflZjn8B8fbabRfiEujX7tWY-0jZnO9zhQqrMuPoTuvAaGerh_SASgQRlXI6y4LNF2Pyu8Z9iO4slihAawVM5R356C83TbDPpxqPyHhksTFQTBqELtjB8bCxDcQDkfSf4AkTpFDpFL8OTP0-OKZ9AYPoNfbUnr02dDW3SbBcFqPVLgPbkYiuUJojaO4XYGbSY7QwUa4"
     }
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 ```
@@ -83,7 +81,7 @@ print(response.text)
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.ando.la/v1/shipment/history?userId=306",
+  CURLOPT_URL => "https://api.ando.la/v1/shipment/history",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -91,7 +89,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4",
+    "Authorization: Bearer D93fM7thTTVrTYmqpDMT2o5ReUxL6FeOM1hoZtOcgYaS8ds1d9qjWOoOn_mUFh7RBr5DuJG36AOLHf6Eqx5IqDcyfjcVkWHw5QO8ZflZjn8B8fbabRfiEujX7tWY-0jZnO9zhQqrMuPoTuvAaGerh_SASgQRlXI6y4LNF2Pyu8Z9iO4slihAawVM5R356C83TbDPpxqPyHhksTFQTBqELtjB8bCxDcQDkfSf4AkTpFDpFL8OTP0-OKZ9AYPoNfbUnr02dDW3SbBcFqPVLgPbkYiuUJojaO4XYGbSY7QwUa4",
     "Content-Type: application/json"
   ),
 ));
@@ -119,12 +117,12 @@ import (
 
 func main() {
 
-	url := "https://api.ando.la/v1/shipment/history?userId=306"
+	url := "https://api.ando.la/v1/shipment/history"
 
 	req, _ := http.NewRequest("GET", url, nil)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4")
+	req.Header.Add("Authorization", "Bearer D93fM7thTTVrTYmqpDMT2o5ReUxL6FeOM1hoZtOcgYaS8ds1d9qjWOoOn_mUFh7RBr5DuJG36AOLHf6Eqx5IqDcyfjcVkWHw5QO8ZflZjn8B8fbabRfiEujX7tWY-0jZnO9zhQqrMuPoTuvAaGerh_SASgQRlXI6y4LNF2Pyu8Z9iO4slihAawVM5R356C83TbDPpxqPyHhksTFQTBqELtjB8bCxDcQDkfSf4AkTpFDpFL8OTP0-OKZ9AYPoNfbUnr02dDW3SbBcFqPVLgPbkYiuUJojaO4XYGbSY7QwUa4")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -139,51 +137,45 @@ func main() {
 
 ### HTTP Request
 
-`GET https://api.ando.la/v1/shipment/history?userId=306`
+`GET https://api.ando.la/v1/shipment/history`
 
 Header | Content
 --------- | -----------
 Authorization | Bearer 4b73b11dc60ee75959eca2c117614e9741dfc99a
 Content-type | application/json
 
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-userId | User ID of the customer which shipment history will be retrieved.
-
 ## Get Shipping Quote
 
 ```shell
 curl --request POST \
   --url 'https://api.ando.la/v1/shipment/quote' \
-  --header 'Authorization: Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k' \
+  --header 'Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw' \
   --header 'Content-Type: application/json' \
-  --data '{  "sender_userID":306,
-	"shipTo_firstName":"Ax",
-	"shipTo_lastName":"candia",
-    "shipTo_email":"opcional@gmail.com",
-    "shipTo_phone":"1123456789",
-   "shipFrom_province":"Catamarca",
-   "shipFrom_addressStreet":"Catamarca",
-   "shipFrom_addressNumber":"4424",
-   "shipFrom_city":"Buenos Aires",
-   "shipFrom_country":"Argentina",
-   "startSpecialInstructions":"tocar timbre",
-   "shipTo_addressStreet":"Guemes",
-   "shipTo_addressNumber":"4424",
-   "shipTo_city":"Buenos Aires",
-   "shipTo_province":"Baires",
-   "shipTo_country":"Argentina",
-   "endSpecialInstructions":"tocar timbre",
-   "packageWidth":2,
-   "packageLarge":2,
-   "packageHeight":2,
-   "packageWeight":1,
-   "shippingMethod":"MOTO",
-   "digitalSignature":false,
-   "currency":"ARS",
-   "promocode":"INFINITRM"
+  --data '{  
+	"shipFrom_province":"Buenos Aires",
+	"shipFrom_addressStreet":"El Salvador",
+	"shipFrom_addressNumber":"5218",
+	"shipFrom_city":"Buenos Aires",
+	"shipFrom_country":"Argentina",
+	"shipFrom_Instructions":"Something.",
+	"shipTo_firstName":"Name",
+	"shipTo_lastName":"LastName",
+	"shipTo_email":"you@domain.com",
+	"shipTo_phone":"000000000",
+	"shipTo_addressStreet":"Guemes",
+	"shipTo_addressNumber":"4424",
+	"shipTo_city":"Buenos Aires",
+	"shipTo_province":"Buenos Aires",
+	"shipTo_country":"Argentina",
+	"shipTo_Instructions":"Something.",
+	"packageWidth":2,
+	"packageLarge":2,
+	"packageHeight":2,
+	"packageWeight":1,
+	"shippingMethod":"MOTO",
+	"digitalSignature":false,
+	"currency":"ARS",
+	"promocode":"CODE000"
 }'
 ```
 
@@ -202,7 +194,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k"
+    "Authorization": "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
   }
 };
 
@@ -219,23 +211,22 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ sender_userID: 306,
-  shipTo_firstName: 'Ax',
-  shipTo_lastName: 'candia',
-  shipTo_email: 'opcional@gmail.com',
-  shipTo_phone: '1123456789',
-  shipFrom_province: 'Catamarca',
-  shipFrom_addressStreet: 'Catamarca',
-  shipFrom_addressNumber: '4424',
+req.write(JSON.stringify({ shipFrom_province: 'Buenos Aires',
+  shipFrom_addressStreet: 'El Salvador',
+  shipFrom_addressNumber: '5218',
   shipFrom_city: 'Buenos Aires',
   shipFrom_country: 'Argentina',
-  startSpecialInstructions: 'tocar timbre',
+  shipFrom_Instructions: 'Something.',
+  shipTo_firstName: 'Name',
+  shipTo_lastName: 'LastName',
+  shipTo_email: 'you@domain.com',
+  shipTo_phone: '000000000',
   shipTo_addressStreet: 'Guemes',
   shipTo_addressNumber: '4424',
   shipTo_city: 'Buenos Aires',
-  shipTo_province: 'Baires',
+  shipTo_province: 'Buenos Aires',
   shipTo_country: 'Argentina',
-  endSpecialInstructions: 'tocar timbre',
+  shipTo_Instructions: 'Something.',
   packageWidth: 2,
   packageLarge: 2,
   packageHeight: 2,
@@ -243,7 +234,7 @@ req.write(JSON.stringify({ sender_userID: 306,
   shippingMethod: 'MOTO',
   digitalSignature: false,
   currency: 'ARS',
-  promocode: 'INFINITRM' }));
+  promocode: 'CODE000' }));
 req.end();
 ```
 
@@ -257,8 +248,8 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k'
-request.body = "{  \"sender_userID\":306,\r\n\t\"shipTo_firstName\":\"Ax\",\r\n\t\"shipTo_lastName\":\"candia\",\r\n    \"shipTo_email\":\"opcional@gmail.com\", \r\n    \"shipTo_phone\":\"1123456789\",\r\n   \"shipFrom_province\":\"Catamarca\",\r\n   \"shipFrom_addressStreet\":\"Catamarca\",\r\n   \"shipFrom_addressNumber\":\"4424\", \r\n   \"shipFrom_city\":\"Buenos Aires\",\r\n   \"shipFrom_country\":\"Argentina\",\r\n   \"startSpecialInstructions\":\"tocar timbre\",\r\n   \"shipTo_addressStreet\":\"Guemes\",\r\n   \"shipTo_addressNumber\":\"4424\", \r\n   \"shipTo_city\":\"Buenos Aires\",\r\n   \"shipTo_province\":\"Baires\",\r\n   \"shipTo_country\":\"Argentina\",\r\n   \"endSpecialInstructions\":\"tocar timbre\",\r\n   \"packageWidth\":2,\r\n   \"packageLarge\":2,\r\n   \"packageHeight\":2,\r\n   \"packageWeight\":1,\r\n   \"shippingMethod\":\"MOTO\",\r\n   \"digitalSignature\":false,\r\n   \"currency\":\"ARS\",\r\n   \"promocode\":\"INFINITRM\" \r\n}"
+request["Authorization"] = 'Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw'
+request.body = "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipFrom_Instructions\":\"Something.\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_email\":\"you@domain.com\", \r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_Instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1,\r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\",\r\n\t\"promocode\":\"CODE000\" \r\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -269,10 +260,10 @@ import requests
 
 url = "https://api.ando.la/v1/shipment/quote"
 
-payload = "{  \"sender_userID\":306,\r\n\t\"shipTo_firstName\":\"Ax\",\r\n\t\"shipTo_lastName\":\"candia\",\r\n    \"shipTo_email\":\"opcional@gmail.com\", \r\n    \"shipTo_phone\":\"1123456789\",\r\n   \"shipFrom_province\":\"Catamarca\",\r\n   \"shipFrom_addressStreet\":\"Catamarca\",\r\n   \"shipFrom_addressNumber\":\"4424\", \r\n   \"shipFrom_city\":\"Buenos Aires\",\r\n   \"shipFrom_country\":\"Argentina\",\r\n   \"startSpecialInstructions\":\"tocar timbre\",\r\n   \"shipTo_addressStreet\":\"Guemes\",\r\n   \"shipTo_addressNumber\":\"4424\", \r\n   \"shipTo_city\":\"Buenos Aires\",\r\n   \"shipTo_province\":\"Baires\",\r\n   \"shipTo_country\":\"Argentina\",\r\n   \"endSpecialInstructions\":\"tocar timbre\",\r\n   \"packageWidth\":2,\r\n   \"packageLarge\":2,\r\n   \"packageHeight\":2,\r\n   \"packageWeight\":1,\r\n   \"shippingMethod\":\"MOTO\",\r\n   \"digitalSignature\":false,\r\n   \"currency\":\"ARS\",\r\n   \"promocode\":\"INFINITRM\" \r\n}"
+payload = "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipFrom_Instructions\":\"Something.\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_email\":\"you@domain.com\", \r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_Instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1,\r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\",\r\n\t\"promocode\":\"CODE000\" \r\n}"
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k"
+    'Authorization': "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
     }
 
 response = requests.request("POST", url, data=payload, headers=headers)
@@ -293,9 +284,9 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{  \"sender_userID\":306,\r\n\t\"shipTo_firstName\":\"Ax\",\r\n\t\"shipTo_lastName\":\"candia\",\r\n    \"shipTo_email\":\"opcional@gmail.com\", \r\n    \"shipTo_phone\":\"1123456789\",\r\n   \"shipFrom_province\":\"Catamarca\",\r\n   \"shipFrom_addressStreet\":\"Catamarca\",\r\n   \"shipFrom_addressNumber\":\"4424\", \r\n   \"shipFrom_city\":\"Buenos Aires\",\r\n   \"shipFrom_country\":\"Argentina\",\r\n   \"startSpecialInstructions\":\"tocar timbre\",\r\n   \"shipTo_addressStreet\":\"Guemes\",\r\n   \"shipTo_addressNumber\":\"4424\", \r\n   \"shipTo_city\":\"Buenos Aires\",\r\n   \"shipTo_province\":\"Baires\",\r\n   \"shipTo_country\":\"Argentina\",\r\n   \"endSpecialInstructions\":\"tocar timbre\",\r\n   \"packageWidth\":2,\r\n   \"packageLarge\":2,\r\n   \"packageHeight\":2,\r\n   \"packageWeight\":1,\r\n   \"shippingMethod\":\"MOTO\",\r\n   \"digitalSignature\":false,\r\n   \"currency\":\"ARS\",\r\n   \"promocode\":\"INFINITRM\" \r\n}",
+  CURLOPT_POSTFIELDS => "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipFrom_Instructions\":\"Something.\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_email\":\"you@domain.com\", \r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_Instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1,\r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\",\r\n\t\"promocode\":\"CODE000\" \r\n}",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k",
+    "Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw",
     "Content-Type: application/json"
   ),
 ));
@@ -326,12 +317,12 @@ func main() {
 
 	url := "https://api.ando.la/v1/shipment/quote"
 
-	payload := strings.NewReader("{  \"sender_userID\":306,\r\n\t\"shipTo_firstName\":\"Ax\",\r\n\t\"shipTo_lastName\":\"candia\",\r\n    \"shipTo_email\":\"opcional@gmail.com\", \r\n    \"shipTo_phone\":\"1123456789\",\r\n   \"shipFrom_province\":\"Catamarca\",\r\n   \"shipFrom_addressStreet\":\"Catamarca\",\r\n   \"shipFrom_addressNumber\":\"4424\", \r\n   \"shipFrom_city\":\"Buenos Aires\",\r\n   \"shipFrom_country\":\"Argentina\",\r\n   \"startSpecialInstructions\":\"tocar timbre\",\r\n   \"shipTo_addressStreet\":\"Guemes\",\r\n   \"shipTo_addressNumber\":\"4424\", \r\n   \"shipTo_city\":\"Buenos Aires\",\r\n   \"shipTo_province\":\"Baires\",\r\n   \"shipTo_country\":\"Argentina\",\r\n   \"endSpecialInstructions\":\"tocar timbre\",\r\n   \"packageWidth\":2,\r\n   \"packageLarge\":2,\r\n   \"packageHeight\":2,\r\n   \"packageWeight\":1,\r\n   \"shippingMethod\":\"MOTO\",\r\n   \"digitalSignature\":false,\r\n   \"currency\":\"ARS\",\r\n   \"promocode\":\"INFINITRM\" \r\n}")
+	payload := strings.NewReader("{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipFrom_Instructions\":\"Something.\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_email\":\"you@domain.com\", \r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_Instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1,\r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\",\r\n\t\"promocode\":\"CODE000\" \r\n}")
 
 	req, _ := http.NewRequest("POST", url, payload)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k")
+	req.Header.Add("Authorization", "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -346,33 +337,31 @@ func main() {
 
 ```json
 {  
-  "sender_userID":306,
-  "shipTo_firstName":"Ax",
-  "shipTo_lastName":"candia",
-  "shipTo_email":"opcional@gmail.com",
-  "shipTo_phone":"1123456789",
-  "shipFrom_province":"Catamarca",
-  "shipFrom_addressStreet":"Catamarca",
-  "shipFrom_addressNumber":"4424",
-  "shipFrom_city":"Buenos Aires",
-  "shipFrom_country":"Argentina",
-  "startSpecialInstructions":"tocar timbre",
-  "shipTo_addressStreet":"Guemes",
-  "shipTo_addressNumber":"4424",
-  "shipTo_city":"Buenos Aires",
-  "shipTo_province":"Baires",
-  "shipTo_country":"Argentina",
-  "endSpecialInstructions":"tocar timbre",
-  "packageWidth":2,
-  "packageLarge":2,
-  "packageHeight":2,
-  "packageWeight":1,
-  "shippingMethod":"MOTO",
-  "digitalSignature":false,
-  "currency":"ARS",
-  "promocode":"INFINITRM"
+	"shipFrom_province":"Buenos Aires",
+	"shipFrom_addressStreet":"El Salvador",
+	"shipFrom_addressNumber":"5218",
+	"shipFrom_city":"Buenos Aires",
+	"shipFrom_country":"Argentina",
+	"shipFrom_Instructions":"Something.",
+	"shipTo_firstName":"Name",
+	"shipTo_lastName":"LastName",
+	"shipTo_email":"you@domain.com",
+	"shipTo_phone":"000000000",
+	"shipTo_addressStreet":"Guemes",
+	"shipTo_addressNumber":"4424",
+	"shipTo_city":"Buenos Aires",
+	"shipTo_province":"Buenos Aires",
+	"shipTo_country":"Argentina",
+	"shipTo_Instructions":"Something.",
+	"packageWidth":2,
+	"packageLarge":2,
+	"packageHeight":2,
+	"packageWeight":1,
+	"shippingMethod":"MOTO",
+	"digitalSignature":false,
+	"currency":"ARS",
+	"promocode":"CODE000"
 }
-
 ```
 
 The quote will return a price and QuoteID that shall be used to confirm the shipment order from the 'New Shipment' endpoint.
@@ -390,13 +379,12 @@ Content-type | application/json
 
 Parameter | Description
 --------- | -----------
-sender_userID | ID of the user sending the package.
 shipFrom_addressStreet | Street Address of the sender of the package.
 shipFrom_addressNumber | Street Number of the sender of the package.
 shipFrom_city | City of the sender of the package.
 shipFrom_province | Province of the sender of the package.
 shipFrom_country | Country of the sender of the package.
-startSpecialInstructions | Special instructions for the rider when picking up the package.
+shipFrom_Instructions | Special instructions for the rider when picking up the package.
 shipTo_firstName | First Name of the receiver of the package.
 shipTo_lastName | Last Name of the receiver of the package.
 shipTo_email | Email of the receiver of the package.
@@ -406,7 +394,7 @@ shipTo_addressNumber | Street Number of the receiver of the package.
 shipTo_city | City of the receiver of the package.
 shipTo_province | Province of the receiver of the package.
 shipTo_country | Country of the receiver of the package.
-endSpecialInstructions | Special instructions for the rider when delivering the package.
+shipTo_Instructions | Special instructions for the rider when delivering the package.
 packageWidth | Integer (in cm).
 packageLarge | Integer (in cm).
 packageHeight | Integer (in cm).
@@ -421,13 +409,11 @@ promocode | Promocode used for this shipment.
 ```shell
 curl --request POST \
   --url 'https://api.ando.la/v1/shipment/new' \
-  --header 'Authorization: Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k' \
+  --header 'Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw' \
   --header 'Content-Type: application/json' \
   --data '{
-  "quoteID":"6517"  ,
-  "priceId":"8601" ,
-  "payee": "receptor",  
-  "discountId":"22"
+  "quoteID":"6757"  ,
+  "promocode":"CODE000"
 }'
 ```
 
@@ -446,7 +432,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k"
+    "Authorization": "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
   }
 };
 
@@ -463,10 +449,7 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ quoteID: '6517',
-  priceId: '8601',
-  payee: 'receptor',
-  discountId: '22' }));
+req.write(JSON.stringify({ quoteID: '6757', promocode: 'CODE000' }));
 req.end();
 ```
 
@@ -480,8 +463,8 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k'
-request.body = "{\r\n  \"quoteID\":\"6517\"  ,\r\n  \"priceId\":\"8601\" ,\r\n  \"payee\": \"receptor\",  \r\n  \"discountId\":\"22\"\r\n}"
+request["Authorization"] = 'Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw'
+request.body = "{\r\n  \"quoteID\":\"6757\"  , \r\n  \"promocode\":\"CODE000\" \r\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -492,10 +475,10 @@ import requests
 
 url = "https://api.ando.la/v1/shipment/new"
 
-payload = "{\r\n  \"quoteID\":\"6517\"  ,\r\n  \"priceId\":\"8601\" ,\r\n  \"payee\": \"receptor\",  \r\n  \"discountId\":\"22\"\r\n}"
+payload = "{\r\n  \"quoteID\":\"6757\"  , \r\n  \"promocode\":\"CODE000\" \r\n}"
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k"
+    'Authorization': "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
     }
 
 response = requests.request("POST", url, data=payload, headers=headers)
@@ -516,9 +499,9 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\r\n  \"quoteID\":\"6517\"  ,\r\n  \"priceId\":\"8601\" ,\r\n  \"payee\": \"receptor\",  \r\n  \"discountId\":\"22\"\r\n}",
+  CURLOPT_POSTFIELDS => "{\r\n  \"quoteID\":\"6757\"  , \r\n  \"promocode\":\"CODE000\" \r\n}",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k",
+    "Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw",
     "Content-Type: application/json"
   ),
 ));
@@ -549,12 +532,12 @@ func main() {
 
 	url := "https://api.ando.la/v1/shipment/new"
 
-	payload := strings.NewReader("{\r\n  \"quoteID\":\"6517\"  ,\r\n  \"priceId\":\"8601\" ,\r\n  \"payee\": \"receptor\",  \r\n  \"discountId\":\"22\"\r\n}")
+	payload := strings.NewReader("{\r\n  \"quoteID\":\"6757\"  , \r\n  \"promocode\":\"CODE000\" \r\n}")
 
 	req, _ := http.NewRequest("POST", url, payload)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer M1ia9-OmZ-h2orVTv_0AS2KR8wyecBnG4LUxk4YNueOch95QA0l01bhVDj7dH_ydTA8gBI-xdgTcM7TqT-72K5-owr-Obe_LoUfxjDMZeT9YAn-CMkP95pr9XjBoKCqv66kYRF-GN8nYi7mTyyEqgeAzkVWqPyeFCZb-x8K_QH5vfrqMWVpWkDOl5Ii9C0-qCWuOfp_4rCIFYjjwylU3WGfL7D9a9Qd5p8Zw33AxzHNydE3BVdaMb9UVKHiN-KgYeRNJ0zstVgplUKaepDl0bLAnbMKLCFgmB3QsG_RRQ9k")
+	req.Header.Add("Authorization", "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -569,10 +552,8 @@ func main() {
 
 ```json
 {
-  "quoteID":"6517"  ,
-  "priceId":"8601" ,
-  "payee": "receptor",  
-  "discountId":"22"
+  "quoteID":"6757"  ,
+  "promocode":"CODE000"
 }
 ```
 In order to start a new shipment, a quote shall be required before.
@@ -591,16 +572,14 @@ Content-type | application/json
 Parameter | Description
 --------- | -----------
 quoteID | Quote ID returned from the QUOTE Endpoint.
-priceId | PriceID also returned from the QUOTE Endpoint.
-payee | Who pays for the shipment. Possible values are `receptor` or `sender`.
-discountId | ID of the PROMOCODE used.
+promocode | Promocode to be used for this shipment.
 
 ## Track a Shipment
 
 ```shell
 curl --request GET \
-  --url 'https://api.ando.la/v1/shipment?quoteID=6559' \
-  --header 'Authorization: Bearer IKd0thOh1XZEYiR6Iqslxf_bZkwZn9ofz7uyFNxs4pasTy9Wtxh-vOYZTRrsfuC4ZOiFZYdUdVwOAfBGjjRyV-St5gS8pVCbzhhVgUnTP6NcpBY7mi1cPFmRtdVStrvCTTb03Ciz3Jj13ohKWdvaf_VCvfQcQwDExBHqQa8EbnZ92cwegLGXd22w2ZiaEQ6maNdvgdEAFwmddo2Dzf4zBPxM0uWNhvg-XLWzwnFOZJZMxWk_mKNVaeTaMz9ClU9vrSg1yy834tx-97VzzEq9QMUt2LdMqv2bSxxHxZv0Qx0' \
+  --url 'https://api.ando.la/v1/shipment?trackingID=6769' \
+  --header 'Authorization: Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg' \
   --header 'Content-Type: application/json'
 ```
 
@@ -618,7 +597,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer IKd0thOh1XZEYiR6Iqslxf_bZkwZn9ofz7uyFNxs4pasTy9Wtxh-vOYZTRrsfuC4ZOiFZYdUdVwOAfBGjjRyV-St5gS8pVCbzhhVgUnTP6NcpBY7mi1cPFmRtdVStrvCTTb03Ciz3Jj13ohKWdvaf_VCvfQcQwDExBHqQa8EbnZ92cwegLGXd22w2ZiaEQ6maNdvgdEAFwmddo2Dzf4zBPxM0uWNhvg-XLWzwnFOZJZMxWk_mKNVaeTaMz9ClU9vrSg1yy834tx-97VzzEq9QMUt2LdMqv2bSxxHxZv0Qx0"
+    "Authorization": "Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg"
   }
 };
 
@@ -642,13 +621,13 @@ req.end();
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.ando.la/v1/shipment?quoteID=6559")
+url = URI("https://api.ando.la/v1/shipment?trackingID=6769")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Get.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer IKd0thOh1XZEYiR6Iqslxf_bZkwZn9ofz7uyFNxs4pasTy9Wtxh-vOYZTRrsfuC4ZOiFZYdUdVwOAfBGjjRyV-St5gS8pVCbzhhVgUnTP6NcpBY7mi1cPFmRtdVStrvCTTb03Ciz3Jj13ohKWdvaf_VCvfQcQwDExBHqQa8EbnZ92cwegLGXd22w2ZiaEQ6maNdvgdEAFwmddo2Dzf4zBPxM0uWNhvg-XLWzwnFOZJZMxWk_mKNVaeTaMz9ClU9vrSg1yy834tx-97VzzEq9QMUt2LdMqv2bSxxHxZv0Qx0'
+request["Authorization"] = 'Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg'
 
 response = http.request(request)
 puts response.read_body
@@ -659,11 +638,11 @@ import requests
 
 url = "https://api.ando.la/v1/shipment"
 
-querystring = {"quoteID":"6559"}
+querystring = {"trackingID":"6769"}
 
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer IKd0thOh1XZEYiR6Iqslxf_bZkwZn9ofz7uyFNxs4pasTy9Wtxh-vOYZTRrsfuC4ZOiFZYdUdVwOAfBGjjRyV-St5gS8pVCbzhhVgUnTP6NcpBY7mi1cPFmRtdVStrvCTTb03Ciz3Jj13ohKWdvaf_VCvfQcQwDExBHqQa8EbnZ92cwegLGXd22w2ZiaEQ6maNdvgdEAFwmddo2Dzf4zBPxM0uWNhvg-XLWzwnFOZJZMxWk_mKNVaeTaMz9ClU9vrSg1yy834tx-97VzzEq9QMUt2LdMqv2bSxxHxZv0Qx0"
+    'Authorization': "Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg"
     }
 
 response = requests.request("GET", url, headers=headers, params=querystring)
@@ -677,7 +656,7 @@ print(response.text)
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.ando.la/v1/shipment?quoteID=6559",
+  CURLOPT_URL => "https://api.ando.la/v1/shipment?trackingID=6769",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -685,7 +664,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer IKd0thOh1XZEYiR6Iqslxf_bZkwZn9ofz7uyFNxs4pasTy9Wtxh-vOYZTRrsfuC4ZOiFZYdUdVwOAfBGjjRyV-St5gS8pVCbzhhVgUnTP6NcpBY7mi1cPFmRtdVStrvCTTb03Ciz3Jj13ohKWdvaf_VCvfQcQwDExBHqQa8EbnZ92cwegLGXd22w2ZiaEQ6maNdvgdEAFwmddo2Dzf4zBPxM0uWNhvg-XLWzwnFOZJZMxWk_mKNVaeTaMz9ClU9vrSg1yy834tx-97VzzEq9QMUt2LdMqv2bSxxHxZv0Qx0",
+    "Authorization: Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg",
     "Content-Type: application/json"
   ),
 ));
@@ -713,12 +692,12 @@ import (
 
 func main() {
 
-	url := "https://api.ando.la/v1/shipment?quoteID=6559"
+	url := "https://api.ando.la/v1/shipment?trackingID=6769"
 
 	req, _ := http.NewRequest("GET", url, nil)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer IKd0thOh1XZEYiR6Iqslxf_bZkwZn9ofz7uyFNxs4pasTy9Wtxh-vOYZTRrsfuC4ZOiFZYdUdVwOAfBGjjRyV-St5gS8pVCbzhhVgUnTP6NcpBY7mi1cPFmRtdVStrvCTTb03Ciz3Jj13ohKWdvaf_VCvfQcQwDExBHqQa8EbnZ92cwegLGXd22w2ZiaEQ6maNdvgdEAFwmddo2Dzf4zBPxM0uWNhvg-XLWzwnFOZJZMxWk_mKNVaeTaMz9ClU9vrSg1yy834tx-97VzzEq9QMUt2LdMqv2bSxxHxZv0Qx0")
+	req.Header.Add("Authorization", "Bearer qRtl1Tlh2659xK0YTdJc4gYTNK98tzLzLXB2sZd1giiqhGWHWwGjjQsIkkr1gZgJbnqrqt0FEf9ulVb21tLDJopeOg50lNZN0Akbn6NUQynnzSw2yL7BKhxb-qKyJNOk3Cfum3cAhQilcKJUMFTC9GS4BIjXxFQ0Nk_NvIabV7CnDHXfrWoCAxwF1eqGwmhycoMwaWUi1cWfQPc6J1EZTAMfBPeNGsqNtm7oSM98RkDXG_YJ1AozMRD04oUI1uTrCIIXRXTTcrGxFIlWAbJKlzzBTMODFQu7pFJdoegBiUg")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -751,11 +730,10 @@ trackingID | ID returned after the shipment order is confirmed from the 'New Shi
 ```shell
 curl --request POST \
   --url 'https://api.ando.la/v1/shipment/cancel' \
-  --header 'Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4' \
+  --header 'Authorization: Bearer gSJyUaU_ThBDXU_eZ0SWeuvdEK4B-Hjb-kpSFqs5ZLaw5RhA2Ibv68ubrC6_T4eu6-X6k_z6vPMN8EoyOOs1reiS3YegDPiAqwBvZZc97m1LmfGsu_e1502xR2BH0tBv5B3DseRbu187aUyznocvEUVheeVFmxjESnbAcywWT-38OaJqw5AUTOwnCm2tv8EI_xmk8S2dpqYEMOJ_djnQKrB8d-PnGiSadaV8GMn8mjraWcfculVQ25wVceVoqiOYi3KBi7i0XrjLAOgSVv_uwM5wEu7abo-p2ZsW-SsUPEE' \
   --header 'Content-Type: application/json' \
   --data '{
-  "trackingID":"2747"  ,
-  "userID":"306"  
+  "trackingID":"2747"
 }'
 ```
 
@@ -774,7 +752,7 @@ var options = {
   ],
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    "Authorization": "Bearer gSJyUaU_ThBDXU_eZ0SWeuvdEK4B-Hjb-kpSFqs5ZLaw5RhA2Ibv68ubrC6_T4eu6-X6k_z6vPMN8EoyOOs1reiS3YegDPiAqwBvZZc97m1LmfGsu_e1502xR2BH0tBv5B3DseRbu187aUyznocvEUVheeVFmxjESnbAcywWT-38OaJqw5AUTOwnCm2tv8EI_xmk8S2dpqYEMOJ_djnQKrB8d-PnGiSadaV8GMn8mjraWcfculVQ25wVceVoqiOYi3KBi7i0XrjLAOgSVv_uwM5wEu7abo-p2ZsW-SsUPEE"
   }
 };
 
@@ -791,7 +769,7 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ trackingID: '2747', userID: '306' }));
+req.write(JSON.stringify({ trackingID: '2747' }));
 req.end();
 ```
 
@@ -805,8 +783,8 @@ http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = 'application/json'
-request["Authorization"] = 'Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4'
-request.body = "{\r\n  \"trackingID\":\"2747\"  ,\r\n  \"userID\":\"306\"  \r\n}"
+request["Authorization"] = 'Bearer gSJyUaU_ThBDXU_eZ0SWeuvdEK4B-Hjb-kpSFqs5ZLaw5RhA2Ibv68ubrC6_T4eu6-X6k_z6vPMN8EoyOOs1reiS3YegDPiAqwBvZZc97m1LmfGsu_e1502xR2BH0tBv5B3DseRbu187aUyznocvEUVheeVFmxjESnbAcywWT-38OaJqw5AUTOwnCm2tv8EI_xmk8S2dpqYEMOJ_djnQKrB8d-PnGiSadaV8GMn8mjraWcfculVQ25wVceVoqiOYi3KBi7i0XrjLAOgSVv_uwM5wEu7abo-p2ZsW-SsUPEE'
+request.body = "{\r\n  \"trackingID\":\"2747\" \r\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -817,10 +795,10 @@ import requests
 
 url = "https://api.ando.la/v1/shipment/cancel"
 
-payload = "{\r\n  \"trackingID\":\"2747\"  ,\r\n  \"userID\":\"306\"  \r\n}"
+payload = "{\r\n  \"trackingID\":\"2747\" \r\n}"
 headers = {
     'Content-Type': "application/json",
-    'Authorization': "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4"
+    'Authorization': "Bearer gSJyUaU_ThBDXU_eZ0SWeuvdEK4B-Hjb-kpSFqs5ZLaw5RhA2Ibv68ubrC6_T4eu6-X6k_z6vPMN8EoyOOs1reiS3YegDPiAqwBvZZc97m1LmfGsu_e1502xR2BH0tBv5B3DseRbu187aUyznocvEUVheeVFmxjESnbAcywWT-38OaJqw5AUTOwnCm2tv8EI_xmk8S2dpqYEMOJ_djnQKrB8d-PnGiSadaV8GMn8mjraWcfculVQ25wVceVoqiOYi3KBi7i0XrjLAOgSVv_uwM5wEu7abo-p2ZsW-SsUPEE"
     }
 
 response = requests.request("POST", url, data=payload, headers=headers)
@@ -841,9 +819,9 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\r\n  \"trackingID\":\"2747\"  ,\r\n  \"userID\":\"306\"  \r\n}",
+  CURLOPT_POSTFIELDS => "{\r\n  \"trackingID\":\"2747\" \r\n}",
   CURLOPT_HTTPHEADER => array(
-    "Authorization: Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4",
+    "Authorization: Bearer gSJyUaU_ThBDXU_eZ0SWeuvdEK4B-Hjb-kpSFqs5ZLaw5RhA2Ibv68ubrC6_T4eu6-X6k_z6vPMN8EoyOOs1reiS3YegDPiAqwBvZZc97m1LmfGsu_e1502xR2BH0tBv5B3DseRbu187aUyznocvEUVheeVFmxjESnbAcywWT-38OaJqw5AUTOwnCm2tv8EI_xmk8S2dpqYEMOJ_djnQKrB8d-PnGiSadaV8GMn8mjraWcfculVQ25wVceVoqiOYi3KBi7i0XrjLAOgSVv_uwM5wEu7abo-p2ZsW-SsUPEE",
     "Content-Type: application/json"
   ),
 ));
@@ -874,12 +852,12 @@ func main() {
 
 	url := "https://api.ando.la/v1/shipment/cancel"
 
-	payload := strings.NewReader("{\r\n  \"trackingID\":\"2747\"  ,\r\n  \"userID\":\"306\"  \r\n}")
+	payload := strings.NewReader("{\r\n  \"trackingID\":\"2747\" \r\n}")
 
 	req, _ := http.NewRequest("POST", url, payload)
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Bearer qmYU2SwQG_-9Zr3lM8vKk8IPaBLwyM1p4fDrnNlQpaoJguwXODMgM9_cHq_dJO29d4CQT_DcxiaVfRuzKHeCFo4KnSp37oxy33ZG0q9DevEYoLbVIeABnUF4pQBMsRVovfNCWIePvUEjcK5_EkJ7HDA8pJLocugxpYVPv_Bfm8vfUIYcXy2BuXLAMeLvLyQ4lVOJKUagrnisE12AaUuSRWaMv-T0l5ikQ-tspeqxEtyyTFRqM5YzPUNTxQwNggHrn2fPivY61yYOZwgRAa7IfFUmIbQ49BcdE-LBwQrnuc4")
+	req.Header.Add("Authorization", "Bearer gSJyUaU_ThBDXU_eZ0SWeuvdEK4B-Hjb-kpSFqs5ZLaw5RhA2Ibv68ubrC6_T4eu6-X6k_z6vPMN8EoyOOs1reiS3YegDPiAqwBvZZc97m1LmfGsu_e1502xR2BH0tBv5B3DseRbu187aUyznocvEUVheeVFmxjESnbAcywWT-38OaJqw5AUTOwnCm2tv8EI_xmk8S2dpqYEMOJ_djnQKrB8d-PnGiSadaV8GMn8mjraWcfculVQ25wVceVoqiOYi3KBi7i0XrjLAOgSVv_uwM5wEu7abo-p2ZsW-SsUPEE")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -889,6 +867,12 @@ func main() {
 	fmt.Println(res)
 	fmt.Println(string(body))
 
+}
+```
+
+```json
+{
+  "trackingID":"2747"
 }
 ```
 
@@ -906,4 +890,3 @@ Content-type | application/json
 Parameter | Description
 --------- | -----------
 trackingID | `trackingID` Provided after the confirmation of the new shipment.
-userID | `userID` of the sender of the package.
