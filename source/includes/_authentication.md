@@ -3,7 +3,7 @@
 ##Get Token
 
 ```shell
-curl --request GET \
+curl --request POST \
   --url 'https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd'
 ```
 
@@ -11,7 +11,7 @@ curl --request GET \
 var http = require("http");
 
 var options = {
-  "method": "GET",
+  "method": "POST",
   "hostname": [
     "https://api.ando.la"
   ],
@@ -46,10 +46,23 @@ url = URI("https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0
 
 http = Net::HTTP.new(url.host, url.port)
 
-request = Net::HTTP::Get.new(url)
+request = Net::HTTP::Post.new(url)
 
 response = http.request(request)
 puts response.read_body
+```
+
+```python
+import requests
+
+url = "https://api.ando.la/v1/login"
+
+payload = "{\n\t\"email\": \"you@domain.com\",\n\t\"password\": \"your-passw0rd\"}"
+headers = {'Content-Type': 'application/json'}
+
+response = requests.request("POST", url, data=payload, headers=headers)
+
+print(response.text)
 ```
 
 ```php
@@ -64,7 +77,7 @@ curl_setopt_array($curl, array(
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_CUSTOMREQUEST => "POST",
 ));
 
 $response = curl_exec($curl);
@@ -92,7 +105,7 @@ func main() {
 
 	url := "https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd"
 
-	req, _ := http.NewRequest("GET", url, nil)
+	req, _ := http.NewRequest("POST", url, nil)
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -109,7 +122,7 @@ First ask for an access token, using your login credentials. a TOKEN will be ret
 
 ###HTTP Request
 
-`GET https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd`
+`POST https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd`
 
 Parameter | Description
 --------- | -----------

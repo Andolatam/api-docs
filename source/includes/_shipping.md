@@ -404,7 +404,6 @@ sender_userID | Integer (ID of sender).
 shippingMethod | Shipping Method can be `MOTO` or `BICICLETA`
 digitalSignature | Boolean (`true` or `false`), indicates if a digital signature is required by the receiver.
 currency | Currency of the price of this shipment.
-promocode | Promocode used for this shipment.
 
 ## New Shipment
 
@@ -416,7 +415,8 @@ curl --request POST \
   --data '{
   "quoteID":"6757"  ,
   "priceId":"6757",
-  "paymentMethod": "checking_account"
+  "paymentMethod": "checking_account",
+  "promocode": "CODE888"
 }'
 ```
 
@@ -452,7 +452,7 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ quoteID: '6757', priceId:"6757", paymentMethod: "checking_account" }));
+req.write(JSON.stringify({ quoteID: '6757', priceId:"6757", paymentMethod: "checking_account", promocode: "CODE888" }));
 req.end();
 ```
 
@@ -467,7 +467,7 @@ http = Net::HTTP.new(url.host, url.port)
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = 'application/json'
 request["Authorization"] = 'Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw'
-request.body = "{\r\n  \"quoteID\":\"6757\", \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n}"
+request.body = "{\r\n  \"quoteID\":\"6757\", \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n, \r\n  \"promocode\":\"CODE888\" \r\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -478,7 +478,7 @@ import requests
 
 url = "https://api.ando.la/v1/shipment/new"
 
-payload = "{\r\n  \"quoteID\":\"6757\"  , \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n}"
+payload = "{\r\n  \"quoteID\":\"6757\"  , \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n, \r\n  \"promocode\":\"CODE888\" \r\n}"
 headers = {
     'Content-Type': "application/json",
     'Authorization': "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
@@ -502,7 +502,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\r\n  \"quoteID\":\"6757\"  , \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n}",
+  CURLOPT_POSTFIELDS => "{ \"quoteID\":\"6757\"  , \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n, \r\n  \"promocode\":\"CODE888\" \r\n}",
   CURLOPT_HTTPHEADER => array(
     "Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw",
     "Content-Type: application/json"
@@ -535,7 +535,7 @@ func main() {
 
 	url := "https://api.ando.la/v1/shipment/new"
 
-	payload := strings.NewReader("{\r\n  \"quoteID\":\"6757\"  , \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n}")
+	payload := strings.NewReader("{\r\n  \"quoteID\":\"6757\"  , \r\n  \"priceId\":\"6757\", \r\n  \"paymentMethod\":\"checking_account\" \r\n, \r\n  \"promocode\":\"CODE888\" \r\n }")
 
 	req, _ := http.NewRequest("POST", url, payload)
 
@@ -557,8 +557,8 @@ func main() {
 {
   "quoteID":"6757"  ,
   "priceId":"6757",
-  "paymentMethod": "checking_account"
-  
+  "paymentMethod": "checking_account",
+  "promocode": "CODE888"
 }
 ```
 In order to start a new shipment, a quote shall be required before.
@@ -578,7 +578,8 @@ Parameter | Description
 --------- | -----------
 quoteID | Quote ID returned from the QUOTE Endpoint.
 priceId | Price Id returned from the QUOTE Endpoint.
-paymentMethod | Payment Method used by the customer
+paymentMethod | Payment Method used by the customer (checking_account or credit_card)
+promoCode (optional) | Promotional code given to the user
 
 ## Track a Shipment
 
