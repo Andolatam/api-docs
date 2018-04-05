@@ -4,7 +4,12 @@
 
 ```shell
 curl --request POST \
-  --url 'https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd'
+  --url 'https://api.ando.la/v1/login'\
+  --header 'Content-Type: application/json' \
+  --data '{
+	  "email": "you@domain.com",
+	  "password": "your-passw0rd",
+  }'
 ```
 
 ```javascript
@@ -19,7 +24,9 @@ var options = {
     "v1",
     "login"
   ],
-  "headers": {}
+  "headers": {
+    "Content-Type": "application/json"
+  }
 };
 
 var req = http.request(options, function (res) {
@@ -35,6 +42,11 @@ var req = http.request(options, function (res) {
   });
 });
 
+req.write(JSON.stringify({ 
+  email: 'you@domain.com',
+  password: 'your-passw0rd'
+}));
+
 req.end();
 ```
 
@@ -42,11 +54,12 @@ req.end();
 require 'uri'
 require 'net/http'
 
-url = URI("https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd")
+url = URI("https://api.ando.la/v1/login")
 
 http = Net::HTTP.new(url.host, url.port)
 
 request = Net::HTTP::Post.new(url)
+request.body = "{\n\t\"email\": \"you@domain.com\",\n\t\"password\": \"your-passw0rd\"\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -71,13 +84,17 @@ print(response.text)
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd",
+  CURLOPT_URL => "https://api.ando.la/v1/login",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "{\n\t\"email\": \"you@domain.com\",\n\t\"password\": \"your-passw0rd\"\n}",
+  CURLOPT_HTTPHEADER => array(
+    "Content-Type: application/json"
+  ),
 ));
 
 $response = curl_exec($curl);
@@ -103,9 +120,13 @@ import (
 
 func main() {
 
-	url := "https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd"
+  url := "https://api.ando.la/v1/login"
+  
+  payload := strings.NewReader("{\n\t\"email\": \"you@domain.com\",\n\t\"password\": \"your-passw0rd\"\n}")
 
-	req, _ := http.NewRequest("POST", url, nil)
+  req, _ := http.NewRequest("POST", url, payload)
+  
+  req.Header.Add("Content-Type", "application/json")
 
 	res, _ := http.DefaultClient.Do(req)
 
@@ -118,11 +139,23 @@ func main() {
 }
 ```
 
+```json
+{
+	"email": "you@domain.com",
+	"password": "your-passw0rd"
+}
+```
+
 First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer.
 
 ###HTTP Request
 
-`POST https://api.ando.la/v1/login?email=you@domain.com&password=yourp4ssw0rd`
+`POST https://api.ando.la/v1/login`
+
+Header | Content
+--------- | -----------
+Authorization | Bearer 4b73b11dc60ee75959eca2c117614e9741dfc99a
+Content-type | application/json
 
 Parameter | Description
 --------- | -----------
