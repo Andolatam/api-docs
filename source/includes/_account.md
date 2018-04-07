@@ -124,6 +124,23 @@ func main() {
 
 }
 ```
+
+Get information of User Account. Will return the following JSON:
+
+`{"email": "user_email@email.com",
+  "name": "Name",
+  "surname": "Surname",
+  "userID": 1,
+  "phone": "USERPHONE",
+  "address": [],
+  "carrierId": 0,
+  "calification": 0,
+  "identificationNumber": null,
+  "profilePicture": null,
+  "companyId": 1,
+  "token": "Bearer USERTOKEN"
+}`
+
 ### HTTP Request
 
 `GET https://api.ando.la/v1/user?email=you@domain.com&token=4b73b11dc60ee75959eca2c117614e9741dfc99a`
@@ -282,6 +299,10 @@ func main() {
   "email": "you@domain.com"  
 }
 ```
+
+Endpoint for POST request for password recovery. Will return the following String
+
+`Password recovery succesfull, please check your email`
 
 ### HTTP Request
 
@@ -460,6 +481,10 @@ func main() {
 	"PersonalID_type":"DNI"
 }
 ```
+
+Endpoint for POST a request for Signup an User. If the Signup was succesful will return the following String
+
+`User created Succesfully` 
 
 ### HTTP Request
 

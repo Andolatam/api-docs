@@ -135,6 +135,8 @@ func main() {
 }
 ```
 
+Endpoint to get data from shipment. 
+
 ### HTTP Request
 
 `GET https://api.ando.la/v1/shipment/history`
@@ -365,7 +367,7 @@ func main() {
 }
 ```
 
-The quote will return a price and QuoteID that shall be used to confirm the shipment order from the 'New Shipment' endpoint.
+The quote will return a price and QuoteID that shall be used to confirm the shipment order from the 'New Shipment' endpoint. 
 
 ### HTTP Request
 
@@ -561,7 +563,7 @@ func main() {
   "promocode": "CODE888"
 }
 ```
-In order to start a new shipment, a quote shall be required before.
+Endpoint to Post New Shipment. In order to start a new shipment, a quote shall be required before. 
 
 ### HTTP Request
 
@@ -716,6 +718,15 @@ func main() {
 
 }
 ```
+
+Endpoint to track a shipment status. Will return the following JSON (statusID & message will depend of shipment status itself):
+
+`{
+    "status": {
+        "statusID": 19,
+        "message": "CLOSED"
+    }
+}`
 
 ### HTTP Request
 
@@ -882,6 +893,8 @@ func main() {
   "trackingID":"2747"
 }
 ```
+
+Endpoint to cancel a shipment.
 
 ### HTTP Request
 

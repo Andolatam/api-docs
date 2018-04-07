@@ -135,6 +135,9 @@ func main() {
 }
 ```
 
+Endpoint to Get all User's Cards. If exist, will return a JSON file with information about cards, else will return an error (616).
+
+
 ### HTTP Request
 
 `GET https://api.ando.la/v1/user/paymentMethods`
@@ -317,6 +320,8 @@ func main() {
   "cardType":"VISA"
 }
 ```
+Endpoint to add an User's card. 
+
 ### HTTP Request
 
 `POST https://api.ando.la/v1/user/paymentMethods/add`
@@ -490,6 +495,8 @@ func main() {
   "cardId":12
 }
 ```
+Endpoint to Delete an User's card. 
+
 ### HTTP Request
 
 `DELETE https://api.ando.la/v1/user/paymentMethods/remove`

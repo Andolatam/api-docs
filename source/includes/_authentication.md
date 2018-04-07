@@ -146,7 +146,14 @@ func main() {
 }
 ```
 
-First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer.
+Endpoint to POST a Login Request. First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer. If Login was successful will return the following JSON:
+
+`{
+    "email": "useremail@gmail.com",
+    "userID": 1,
+    "token": "USER_TOKEN",
+    "expirationToken": "DATE_TOKEN"
+}`
 
 ###HTTP Request
 

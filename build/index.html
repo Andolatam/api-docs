@@ -424,7 +424,14 @@
     </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-passw0rd"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer.</p>
+<p>Endpoint to POST a Login Request. First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer. If Login was successful will return the following JSON:</p>
+
+<p><code>{
+    &quot;email&quot;: &quot;useremail@gmail.com&quot;,
+    &quot;userID&quot;: 1,
+    &quot;token&quot;: &quot;USER_TOKEN&quot;,
+    &quot;expirationToken&quot;: &quot;DATE_TOKEN&quot;
+}</code></p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/login</code></p>
 
@@ -565,7 +572,23 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre>
+<p>Get information of User Account. Will return the following JSON:</p>
+
+<p><code>{&quot;email&quot;: &quot;user_email@email.com&quot;,
+  &quot;name&quot;: &quot;Name&quot;,
+  &quot;surname&quot;: &quot;Surname&quot;,
+  &quot;userID&quot;: 1,
+  &quot;phone&quot;: &quot;USERPHONE&quot;,
+  &quot;address&quot;: [],
+  &quot;carrierId&quot;: 0,
+  &quot;calification&quot;: 0,
+  &quot;identificationNumber&quot;: null,
+  &quot;profilePicture&quot;: null,
+  &quot;companyId&quot;: 1,
+  &quot;token&quot;: &quot;Bearer USERTOKEN&quot;
+}</code></p>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/user?email=you@domain.com&amp;token=4b73b11dc60ee75959eca2c117614e9741dfc99a</code></p>
 
 <table><thead>
@@ -719,7 +742,11 @@
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@domain.com"</span><span class="w">  
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint for POST request for password recovery. Will return the following String</p>
+
+<p><code>Password recovery succesfull, please check your email</code></p>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/recover/password</code></p>
 
 <table><thead>
@@ -889,7 +916,11 @@
     </span><span class="s2">"PersonalID_number"</span><span class="p">:</span><span class="mi">30000000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"PersonalID_type"</span><span class="p">:</span><span class="s2">"DNI"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint for POST a request for Signup an User. If the Signup was succesful will return the following String</p>
+
+<p><code>User created Succesfully</code> </p>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/signup</code></p>
 
 <table><thead>
@@ -1062,7 +1093,9 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint to Get all User&#39;s Cards. If exist, will return a JSON file with information about cards, else will return an error (616).</p>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/user/paymentMethods</code></p>
 
 <table><thead>
@@ -1230,7 +1263,9 @@
   </span><span class="s2">"PersonalID_number"</span><span class="p">:</span><span class="mi">39000000</span><span class="p">,</span><span class="w">
   </span><span class="s2">"cardType"</span><span class="p">:</span><span class="s2">"VISA"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint to add an User&#39;s card. </p>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/user/paymentMethods/add</code></p>
 
 <table><thead>
@@ -1417,7 +1452,9 @@
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"cardId"</span><span class="p">:</span><span class="mi">12</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint to Delete an User&#39;s card. </p>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>DELETE https://api.ando.la/v1/user/paymentMethods/remove</code></p>
 
 <table><thead>
@@ -1562,7 +1599,9 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint to get data from shipment. </p>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/shipment/history</code></p>
 
 <table><thead>
@@ -1779,7 +1818,7 @@
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"ARS"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The quote will return a price and QuoteID that shall be used to confirm the shipment order from the &#39;New Shipment&#39; endpoint.</p>
+<p>The quote will return a price and QuoteID that shall be used to confirm the shipment order from the &#39;New Shipment&#39; endpoint. </p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/shipment/quote</code></p>
 
@@ -2037,7 +2076,7 @@
   </span><span class="s2">"promocode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CODE888"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>In order to start a new shipment, a quote shall be required before.</p>
+<p>Endpoint to Post New Shipment. In order to start a new shipment, a quote shall be required before. </p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/shipment/new</code></p>
 
@@ -2196,7 +2235,16 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint to track a shipment status. Will return the following JSON (statusID &amp; message will depend of shipment status itself):</p>
+
+<p><code>{
+    &quot;status&quot;: {
+        &quot;statusID&quot;: 19,
+        &quot;message&quot;: &quot;CLOSED&quot;
+    }
+}</code></p>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/shipment?trackingID=6559</code></p>
 
 <table><thead>
@@ -2354,7 +2402,9 @@
 </span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"trackingID"</span><span class="p">:</span><span class="s2">"2747"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+</span></code></pre>
+<p>Endpoint to cancel a shipment.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/shipment/cancel</code></p>
 
 <table><thead>
