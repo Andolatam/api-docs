@@ -186,7 +186,7 @@ Response Example
       "cancelled": false
 }
 ```
-Through this endpoints the users can get full data of their shipments. This information is useful to users can view the tracking and current status of their shipments.
+The users can get useful information to view the tracking and current status of their shipments. In order to begin a new shipment history a Bearer Token is needed from Login endpoint. 
 
 ### HTTP Request
 
@@ -430,7 +430,7 @@ Response Example
 }
 ```
 
-Through this endpoint the users can quote their shipments. The quote will return a price and QuoteID that shall be used to confirm the shipment order from the 'New Shipment' endpoint. 
+The users can quote their shipments. The quote will return a price and QuoteID that shall be used to confirm the shipment order from the 'New Shipment' endpoint. 
 
 ### HTTP Request
 
@@ -627,7 +627,7 @@ Request Example
   "promocode": "CODE888"
 }
 ```
-Through this endpoint the users can POST a New Shipment. In order to start a new shipment, a quote shall be required before. 
+The users can request a new shipment. In order to start a new shipment, a quote shall be required before. 
 
 ### HTTP Request
 
@@ -782,15 +782,20 @@ func main() {
 
 }
 ```
-
-Endpoint to track a shipment status. Will return the following JSON (statusID & message will depend of shipment status itself):
-
-`{
+```json
+Request Example
+{
+  "trackingID":"2747"
+}
+Response Example
+{
     "status": {
         "statusID": 19,
         "message": "CLOSED"
     }
-}`
+}
+```
+The users can tracking a shipment status. Requires a trackingID, which was returned by 'New Shipment' endpoint. Will return a JSON with statusID and message, which will depend of shipment status itself.
 
 ### HTTP Request
 
@@ -806,6 +811,39 @@ Content-type | application/json
 Parameter | Description
 --------- | -----------
 trackingID | ID returned after the shipment order is confirmed from the 'New Shipment' endpoint.
+
+
+## Shipment Statuses
+
+There are 25 possible statuses of a shipment that users can tracking through 'Track a Shipment' endpoint.
+
+Status Code | Message
+---------- | -------
+1	| Cancelled.
+2 | Rejected.
+3 | On Its way.
+4 | Waiting for Payment.
+5 | Payment Successful
+6 | Payment Rejected
+7 | Waiting for Rider
+8 | Rider not found
+9 | Traveling to Start Address
+10 | The rider is at the Start Address
+11 | Traveling to End Address
+12 | The rider is at the End Address
+13 | Package Delivered succesfully to User
+14 | Package Delivered to Rider
+15 | Delivered Succesfully
+16 | Paid
+17 | Cancelled
+18 | Voided
+19 | Closed
+20 | Shipment Cancelled by the Rider
+21 | Shipment Cancelled by the Receiver
+22 | Shipment Cancelled by the Sender
+23 | Waiting for Confirmation
+24 | Waiting for a Second Confirmation
+25 | Started 
 
 ## Cancel a Shipment
 
@@ -951,15 +989,13 @@ func main() {
 
 }
 ```
-
 ```json
 Request Example
 {
   "trackingID":"2747"
 }
 ```
-
-Through this endpoints the users can DELETE their shipments. In order to begin a new cancellation, the trackingID is required, provided after the confirmation of a new shipment.
+The users can delete their shipments. In order to begin a new cancellation, the trackingID is required, provided after the confirmation of a new shipment.
 
 ### HTTP Request
 

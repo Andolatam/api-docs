@@ -147,7 +147,7 @@ Response Example
   "token": "Bearer USERTOKEN"
 }
 ```
-Through this endpoint the users can get information of their accounts, using the Bearer Token given from Login. This information is useful to users can view their profiles pages.   
+The users can get information of their accounts, using the Bearer Token given from Login. This information is useful to users can view their profiles pages.   
 
 ### HTTP Request
 
@@ -301,7 +301,7 @@ func main() {
 
 }
 ```
-Through this endpoint the users can recover their account using email as parameter. An automatic E-mail will sent with a recovery link to change the user's password. Will return the following String
+The users can recover their account using email as parameter. An automatic E-mail will sent with a recovery link to change the user's password. Will return the following String
 
 `Password recovery succesfull, please check your email`
 
@@ -484,7 +484,7 @@ Request Example
 }
 ```
 
-Through this endpoint the users can POST a request for Signup. An automatic E-mail will sent ask for user's confirmation in order to signup in Ando.la. If the Signup was succesful will return the following String
+ An automatic E-mail will sent ask for user's confirmation in order to signup in Ando.la. If the Signup was succesful will return the following String
 
 `User created Succesfully` 
 
