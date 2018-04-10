@@ -139,21 +139,28 @@ func main() {
 }
 ```
 
+```javascript
+//JSON Request:
+```
 ```json
 {
 	"email": "you@domain.com",
 	"password": "your-passw0rd"
 }
 ```
+```javascript
+//JSON Response:
+```
+```json
+{
+  "email": "useremail@gmail.com",
+  "userID": 1,
+  "token": "USER_TOKEN",
+  "expirationToken": "DATE_TOKEN"
+}
+```
 
-Endpoint to POST a Login Request. First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer. If Login was successful will return the following JSON:
-
-`{
-    "email": "useremail@gmail.com",
-    "userID": 1,
-    "token": "USER_TOKEN",
-    "expirationToken": "DATE_TOKEN"
-}`
+Endpoint to POST a Login Request. First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer. 
 
 ###HTTP Request
 

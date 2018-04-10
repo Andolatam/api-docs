@@ -419,19 +419,20 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Request:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@domain.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-passw0rd"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Response:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"useremail@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER_TOKEN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expirationToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATE_TOKEN"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint to POST a Login Request. First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer. If Login was successful will return the following JSON:</p>
-
-<p><code>{
-    &quot;email&quot;: &quot;useremail@gmail.com&quot;,
-    &quot;userID&quot;: 1,
-    &quot;token&quot;: &quot;USER_TOKEN&quot;,
-    &quot;expirationToken&quot;: &quot;DATE_TOKEN&quot;
-}</code></p>
+<p>Endpoint to POST a Login Request. First ask for an access token, using your login credentials. a TOKEN will be returned and shall be included in the HEADER of all your request as Bearer. </p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/login</code></p>
 
@@ -572,22 +573,27 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Request:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@domain.com"</span><span class="w">  
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Response:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_email@email.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surname"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USERPHONE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"carrierId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"calification"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"companyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer USERTOKEN"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Get information of User Account. Will return the following JSON:</p>
-
-<p><code>{&quot;email&quot;: &quot;user_email@email.com&quot;,
-  &quot;name&quot;: &quot;Name&quot;,
-  &quot;surname&quot;: &quot;Surname&quot;,
-  &quot;userID&quot;: 1,
-  &quot;phone&quot;: &quot;USERPHONE&quot;,
-  &quot;address&quot;: [],
-  &quot;carrierId&quot;: 0,
-  &quot;calification&quot;: 0,
-  &quot;identificationNumber&quot;: null,
-  &quot;profilePicture&quot;: null,
-  &quot;companyId&quot;: 1,
-  &quot;token&quot;: &quot;Bearer USERTOKEN&quot;
-}</code></p>
+<p>Through this endpoint the users can get information of their accounts, using the Bearer Token given from Login. This information is useful to users can view their profiles pages.   </p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/user?email=you@domain.com&amp;token=4b73b11dc60ee75959eca2c117614e9741dfc99a</code></p>
 
@@ -739,11 +745,8 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@domain.com"</span><span class="w">  
-</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint for POST request for password recovery. Will return the following String</p>
+<p>Through this endpoint the users can recover their account using email as parameter. An automatic E-mail will sent with a recovery link to change the user&#39;s password. Will return the following String</p>
 
 <p><code>Password recovery succesfull, please check your email</code></p>
 <h3 id='http-request-2'>HTTP Request</h3>
@@ -906,7 +909,8 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Request:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@domain.com"</span><span class="p">,</span><span class="w">
@@ -917,7 +921,7 @@
     </span><span class="s2">"PersonalID_type"</span><span class="p">:</span><span class="s2">"DNI"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint for POST a request for Signup an User. If the Signup was succesful will return the following String</p>
+<p>Through this endpoint the users can POST a request for Signup. An automatic E-mail will sent ask for user&#39;s confirmation in order to signup in Ando.la. If the Signup was succesful will return the following String</p>
 
 <p><code>User created Succesfully</code> </p>
 <h3 id='http-request-3'>HTTP Request</h3>
@@ -1094,7 +1098,7 @@
 
 </span><span class="p">}</span><span class="x">
 </span></code></pre>
-<p>Endpoint to Get all User&#39;s Cards. If exist, will return a JSON file with information about cards, else will return an error (616).</p>
+<p>Through this endpoint the users can get information of their credit cards. If exist, will return a JSON file with information about cards, else will return an error.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/user/paymentMethods</code></p>
 
@@ -1264,7 +1268,8 @@
   </span><span class="s2">"cardType"</span><span class="p">:</span><span class="s2">"VISA"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint to add an User&#39;s card. </p>
+<p>Through this endpoint the users can add a credit card to their accounts.
+If exist, will return a JSON file with information about cards, else will return an error.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/user/paymentMethods/add</code></p>
 
@@ -1453,7 +1458,8 @@
   </span><span class="s2">"cardId"</span><span class="p">:</span><span class="mi">12</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint to Delete an User&#39;s card. </p>
+<p>Through this endpoint the users can delete an specific Credit Card. 
+If exist, will return a JSON file with information about cards, else will return an error.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>DELETE https://api.ando.la/v1/user/paymentMethods/remove</code></p>
 
@@ -1599,8 +1605,58 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Response:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"trackingID"</span><span class="p">:</span><span class="mi">12345</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"externalReference"</span><span class="p">:</span><span class="mi">12345</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shipFrom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"user@email.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"surname"</span><span class="p">:</span><span class="s2">"surname"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"userID"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"address"</span><span class="p">,</span><span class="w">   
+      </span><span class="s2">"calification"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"identificationNumber"</span><span class="p">:</span><span class="mi">12345678</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="s2">"profile_picture_url"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"companyId"</span><span class="p">:</span><span class="mi">123456</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"company"</span><span class="p">:</span><span class="s2">"company_name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"company_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"instructions"</span><span class="p">:</span><span class="s2">"instructions"</span><span class="w"> 
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"shipTo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"email@email.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"surname"</span><span class="p">:</span><span class="s2">"surname"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"userID"</span><span class="p">:</span><span class="s2">"userID"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"address"</span><span class="p">,</span><span class="w">   
+      </span><span class="s2">"calification"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"identificationNumber"</span><span class="p">:</span><span class="mi">12345678</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="s2">"profile_picture_url"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"companyId"</span><span class="p">:</span><span class="mi">123456</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"company"</span><span class="p">:</span><span class="s2">"company_name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"company_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"instructions"</span><span class="p">:</span><span class="s2">"instructions"</span><span class="w">  
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"carrier"</span><span class="p">:{</span><span class="w"> 
+      </span><span class="s2">"transport"</span><span class="p">:</span><span class="s2">"bike"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"transportist_name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"surname"</span><span class="p">:</span><span class="s2">"transportist_surname"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transportist_phone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tranportist_email"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="s2">"profile_picture_url"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"sent"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"startDate"</span><span class="p">:</span><span class="s2">"startDate"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"packageType"</span><span class="p">:</span><span class="s2">"packageType"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"paid"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"encripted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"delivered_ToCarrier"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"cancelled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint to get data from shipment. </p>
+<p>Through this endpoints the users can get full data of their shipments. This information is useful to users can view the tracking and current status of their shipments.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/shipment/history</code></p>
 
@@ -1791,7 +1847,8 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Request:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"shipFrom_province"</span><span class="p">:</span><span class="s2">"Buenos Aires"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"shipFrom_addressStreet"</span><span class="p">:</span><span class="s2">"El Salvador"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"shipFrom_addressNumber"</span><span class="p">:</span><span class="s2">"5218"</span><span class="p">,</span><span class="w">
@@ -1817,8 +1874,20 @@
     </span><span class="s2">"digitalSignature"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"ARS"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Response:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"quoteID"</span><span class="p">:</span><span class="w"> </span><span class="mi">221434</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"priceId"</span><span class="p">:</span><span class="mi">1234</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transportType"</span><span class="p">:</span><span class="s2">"BICICLETA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"waitingTime"</span><span class="p">:</span><span class="s2">"10 mins"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"estimatedPrice"</span><span class="p">:</span><span class="mf">12.50</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"estimatedDistance"</span><span class="p">:</span><span class="s2">"12 km"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"estimatedTimeToOrigin"</span><span class="p">:</span><span class="s2">"1 min"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The quote will return a price and QuoteID that shall be used to confirm the shipment order from the &#39;New Shipment&#39; endpoint. </p>
+<p>Through this endpoint the users can quote their shipments. The quote will return a price and QuoteID that shall be used to confirm the shipment order from the &#39;New Shipment&#39; endpoint. </p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/shipment/quote</code></p>
 
@@ -2069,14 +2138,15 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Request:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"quoteID"</span><span class="p">:</span><span class="s2">"6757"</span><span class="w">  </span><span class="p">,</span><span class="w">
   </span><span class="s2">"priceId"</span><span class="p">:</span><span class="s2">"6757"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"checking_account"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"promocode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CODE888"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint to Post New Shipment. In order to start a new shipment, a quote shall be required before. </p>
+<p>Through this endpoint the users can POST a New Shipment. In order to start a new shipment, a quote shall be required before. </p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/shipment/new</code></p>
 
@@ -2399,11 +2469,12 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">//JSON Request:</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"trackingID"</span><span class="p">:</span><span class="s2">"2747"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Endpoint to cancel a shipment.</p>
+<p>Through this endpoints the users can DELETE their shipments. In order to begin a new cancellation, the trackingID is required, provided after the confirmation of a new shipment.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/shipment/cancel</code></p>
 

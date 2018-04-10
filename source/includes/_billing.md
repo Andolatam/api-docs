@@ -135,7 +135,7 @@ func main() {
 }
 ```
 
-Endpoint to Get all User's Cards. If exist, will return a JSON file with information about cards, else will return an error (616).
+Through this endpoint the users can get information of their credit cards. If exist, will return a JSON file with information about cards, else will return an error.
 
 
 ### HTTP Request
@@ -320,7 +320,9 @@ func main() {
   "cardType":"VISA"
 }
 ```
-Endpoint to add an User's card. 
+Through this endpoint the users can add a credit card to their accounts.
+If exist, will return a JSON file with information about cards, else will return an error.
+ 
 
 ### HTTP Request
 
@@ -495,7 +497,9 @@ func main() {
   "cardId":12
 }
 ```
-Endpoint to Delete an User's card. 
+Through this endpoint the users can delete an specific Credit Card. 
+If exist, will return a JSON file with information about cards, else will return an error.
+
 
 ### HTTP Request
 

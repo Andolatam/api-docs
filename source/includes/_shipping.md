@@ -134,8 +134,61 @@ func main() {
 
 }
 ```
-
-Endpoint to get data from shipment. 
+```javascript
+//JSON Response:
+```
+```json
+{
+  "trackingID":12345,
+    "externalReference":12345,
+    "shipFrom": {
+      "email":"user@email.com",
+      "name":"name",
+      "surname":"surname", 
+      "userID":1,
+      "phone":"phone",
+      "address":"address",   
+      "calification":5,
+      "identificationNumber":12345678, 
+      "profilePicture":"profile_picture_url",
+      "companyId":123456,
+      "company":"company_name",
+      "address":"company_address",
+      "instructions":"instructions" 
+    },
+    "shipTo": {
+      "email":"email@email.com",
+      "name":"name",
+      "surname":"surname", 
+      "userID":"userID",
+      "phone":"phone",
+      "address":"address",   
+      "calification":5,
+      "identificationNumber":12345678, 
+      "profilePicture":"profile_picture_url",
+      "companyId":123456,
+      "company":"company_name",
+      "address":"company_address",
+      "instructions":"instructions"  
+    }, 
+    "carrier":{ 
+      "transport":"bike", 
+      "name":"transportist_name",
+      "surname":"transportist_surname",
+      "phone": "transportist_phone",
+      "email": "tranportist_email",
+      "profilePicture":"profile_picture_url",
+      "status":"sent",
+      "startDate":"startDate", 
+      "packageType":"packageType",  
+      "paid":true, 
+      "price":10000,
+      "encripted": "sign",  
+      "delivered_ToCarrier":true,  
+      "cancelled": false
+}
+```
+Through this endpoints the users can get full data of their shipments. This information is useful to users can view the tracking and current status of their shipments.
 
 ### HTTP Request
 
@@ -337,9 +390,11 @@ func main() {
 
 }
 ```
-
+```javascript
+//JSON Request:
+```
 ```json
-{  
+{
 	"shipFrom_province":"Buenos Aires",
 	"shipFrom_addressStreet":"El Salvador",
 	"shipFrom_addressNumber":"5218",
@@ -366,8 +421,24 @@ func main() {
 	"currency":"ARS",
 }
 ```
+```javascript
+//JSON Response:
+```
+```json
+{
+  "quoteID": 221434,
+  "price":{
+    "priceId":1234,
+    "transportType":"BICICLETA",
+    "waitingTime":"10 mins",
+    "estimatedPrice":12.50,
+    "estimatedDistance":"12 km",
+    "estimatedTimeToOrigin":"1 min"
+  }
+}
+```
 
-The quote will return a price and QuoteID that shall be used to confirm the shipment order from the 'New Shipment' endpoint. 
+Through this endpoint the users can quote their shipments. The quote will return a price and QuoteID that shall be used to confirm the shipment order from the 'New Shipment' endpoint. 
 
 ### HTTP Request
 
@@ -554,7 +625,9 @@ func main() {
 
 }
 ```
-
+```javascript
+//JSON Request:
+```
 ```json
 {
   "quoteID":"6757"  ,
@@ -563,7 +636,7 @@ func main() {
   "promocode": "CODE888"
 }
 ```
-Endpoint to Post New Shipment. In order to start a new shipment, a quote shall be required before. 
+Through this endpoint the users can POST a New Shipment. In order to start a new shipment, a quote shall be required before. 
 
 ### HTTP Request
 
@@ -887,14 +960,16 @@ func main() {
 
 }
 ```
-
+```javascript
+//JSON Request:
+```
 ```json
 {
   "trackingID":"2747"
 }
 ```
 
-Endpoint to cancel a shipment.
+Through this endpoints the users can DELETE their shipments. In order to begin a new cancellation, the trackingID is required, provided after the confirmation of a new shipment.
 
 ### HTTP Request
 

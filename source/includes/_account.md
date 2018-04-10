@@ -125,9 +125,20 @@ func main() {
 }
 ```
 
-Get information of User Account. Will return the following JSON:
-
-`{"email": "user_email@email.com",
+```javascript
+//JSON Request:
+```
+```json
+{
+  "email": "you@domain.com"  
+}
+```
+```javascript
+//JSON Response:
+```
+```json
+{
+  "email": "user_email@email.com",
   "name": "Name",
   "surname": "Surname",
   "userID": 1,
@@ -139,7 +150,9 @@ Get information of User Account. Will return the following JSON:
   "profilePicture": null,
   "companyId": 1,
   "token": "Bearer USERTOKEN"
-}`
+}
+```
+Through this endpoint the users can get information of their accounts, using the Bearer Token given from Login. This information is useful to users can view their profiles pages.   
 
 ### HTTP Request
 
@@ -293,14 +306,7 @@ func main() {
 
 }
 ```
-
-```json
-{
-  "email": "you@domain.com"  
-}
-```
-
-Endpoint for POST request for password recovery. Will return the following String
+Through this endpoint the users can recover their account using email as parameter. An automatic E-mail will sent with a recovery link to change the user's password. Will return the following String
 
 `Password recovery succesfull, please check your email`
 
@@ -468,7 +474,9 @@ func main() {
 
 }
 ```
-
+```javascript
+//JSON Request:
+```
 ```json
 {
 	"firstName": "John",
@@ -482,7 +490,7 @@ func main() {
 }
 ```
 
-Endpoint for POST a request for Signup an User. If the Signup was succesful will return the following String
+Through this endpoint the users can POST a request for Signup. An automatic E-mail will sent ask for user's confirmation in order to signup in Ando.la. If the Signup was succesful will return the following String
 
 `User created Succesfully` 
 
