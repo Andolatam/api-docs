@@ -125,18 +125,13 @@ func main() {
 }
 ```
 
-```javascript
-//JSON Request:
-```
+
 ```json
+Request Example
 {
   "email": "you@domain.com"  
 }
-```
-```javascript
-//JSON Response:
-```
-```json
+Response Example
 {
   "email": "user_email@email.com",
   "name": "Name",
@@ -474,10 +469,9 @@ func main() {
 
 }
 ```
-```javascript
-//JSON Request:
-```
+
 ```json
+Request Example
 {
 	"firstName": "John",
 	"lastName": "Doe",

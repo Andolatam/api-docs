@@ -309,6 +309,7 @@ func main() {
 ```
 
 ```json
+Request Example
 {
   "cardNumber": 4540000000000000,
   "securityCode": "111",
@@ -493,6 +494,7 @@ func main() {
 ```
 
 ```json
+Request Example
 {
   "cardId":12
 }

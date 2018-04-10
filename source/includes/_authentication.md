@@ -139,19 +139,14 @@ func main() {
 }
 ```
 
-```javascript
-//JSON Request:
-```
+
 ```json
+Request Example
 {
 	"email": "you@domain.com",
 	"password": "your-passw0rd"
 }
-```
-```javascript
-//JSON Response:
-```
-```json
+Response Example
 {
   "email": "useremail@gmail.com",
   "userID": 1,

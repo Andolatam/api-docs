@@ -134,10 +134,8 @@ func main() {
 
 }
 ```
-```javascript
-//JSON Response:
-```
 ```json
+Response Example
 {
   "trackingID":12345,
     "externalReference":12345,
@@ -390,10 +388,8 @@ func main() {
 
 }
 ```
-```javascript
-//JSON Request:
-```
 ```json
+Request Example
 {
 	"shipFrom_province":"Buenos Aires",
 	"shipFrom_addressStreet":"El Salvador",
@@ -420,11 +416,7 @@ func main() {
 	"digitalSignature":false,
 	"currency":"ARS",
 }
-```
-```javascript
-//JSON Response:
-```
-```json
+Response Example
 {
   "quoteID": 221434,
   "price":{
@@ -625,10 +617,9 @@ func main() {
 
 }
 ```
-```javascript
-//JSON Request:
-```
+
 ```json
+Request Example
 {
   "quoteID":"6757"  ,
   "priceId":"6757",
@@ -960,10 +951,9 @@ func main() {
 
 }
 ```
-```javascript
-//JSON Request:
-```
+
 ```json
+Request Example
 {
   "trackingID":"2747"
 }
