@@ -301,9 +301,19 @@ func main() {
 
 }
 ```
-The users can recover their account using email as parameter. An automatic E-mail will sent with a recovery link to change the user's password. Will return the following String
+```json
+Request Example
+{
+    "email": "you@domain.com"
+}
+Response Example
+{
+    "status": 200,
+    "message": "Password recovery succesfully, please check your email"
+}
+```
 
-`Password recovery succesfull, please check your email`
+The users can recover their account using email as parameter. An automatic E-mail will sent with a recovery link to change the user's password. 
 
 ### HTTP Request
 
@@ -482,11 +492,14 @@ Request Example
 	"PersonalID_number":30000000,
 	"PersonalID_type":"DNI"
 }
+Response Example
+{
+  "status": 200,
+  "message": "User created Succesfully, please check your email for confirmation"
+}
 ```
 
- An automatic E-mail will sent ask for user's confirmation in order to signup in Ando.la. If the Signup was succesful will return the following String
-
-`User created Succesfully` 
+The users can signup in Ando.la. An automatic E-mail will sent ask for user's confirmation. After that the user would be signed up in Ando.la successfully. 
 
 ### HTTP Request
 

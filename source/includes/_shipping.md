@@ -626,6 +626,10 @@ Request Example
   "paymentMethod": "credit_card",
   "promocode": "CODE888"
 }
+Response Example 
+{
+    "trackingID": "11111"
+}
 ```
 The users can request a new shipment. In order to start a new shipment, a quote shall be required before. 
 
@@ -815,9 +819,9 @@ Parameter | Description
 trackingID | ID returned after the shipment order is confirmed from the 'New Shipment' endpoint.
 
 
-## Shipment Statuses
+## Shipment Status
 
-There are 25 possible statuses of a shipment that users can tracking through 'Track a Shipment' endpoint.
+There are 25 possible status of a shipment that users can tracking through 'Track a Shipment' endpoint.
 
 Status Code | Message
 ---------- | -------
@@ -995,6 +999,11 @@ func main() {
 Request Example
 {
   "trackingID":"2747"
+}
+Response Example
+{
+    "status": 200,
+    "message": "Delivery cancelled"
 }
 ```
 The users can delete their shipments. In order to begin a new cancellation, the trackingID is required, provided after the confirmation of a new shipment.
