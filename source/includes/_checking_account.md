@@ -135,7 +135,7 @@ Response Example
 }
 ```
 
-The users can check their account balances, using the Bearer Token given from Login. The total (account balance) given from this endpoint is needed in order to add funds to a MercadoPago account.   
+The users can check their account balances, using the Bearer Token given from Login. 
 
 ### HTTP Request
 
@@ -303,7 +303,7 @@ Response Example
 }
 ```
 
-The users can add funds to their MercadoPago accounts using the companyID and total (account balance). The 'total' parameter is given from 'Get Checking Account' endpoint.
+The users can add funds to their MercadoPago accounts using the companyID and total. The 'total' parameter is given from 'Get Checking Account' endpoint.
 
 ### HTTP Request
 
