@@ -2654,7 +2654,9 @@
 <td><code>trackingID</code> Provided after the confirmation of the new shipment.</td>
 </tr>
 </tbody></table>
-<h1 id='checking-account'>Checking Account</h1><h2 id='get-checking-account'>Get Checking Account</h2><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+<h1 id='checking-account'>Checking Account</h1>
+<p>Only the Business can get a Checking Account in Ando.la, whom must send an email to <a href="mailto:soporte@ando.la">soporte@ando.la</a> in order to activate it. </p>
+<h2 id='get-checking-account'>Get Checking Account</h2><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.ando.la/v1/checkingAccount/:companyID'</span> <span class="se">\</span>
   --header <span class="s1">'Authorization: Bearer Ec2_giC2EuDGPvXBvQ-ej4SF4bpB4rAF9PKH8XSqMmmZ4VLh062P1s1EBFYm_xP5ox9QtFXjEw9odekbuqyKop0zEHokJJsQdrK9X-fzuVEH-0IOq-c2IgxbmCB5NBDKJR1tYIN7NEob5UG5iLgcpsjsqJzbY_257moesQ0dD0Pxhg5P_SHWn-Xd_-WC5TIq4DRUNWFcft35-o2cskrw9zt_klG8PmjJXYRP83EK7las3rKwxs_EozTZ1cOnzK_-Jjppg_gUkFBgrLi6QFRdM8FhY8fdAD5fU4f0d4UUGCo'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"http"</span><span class="p">);</span>
@@ -2767,7 +2769,7 @@
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLED"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The users can check their account balances, using the Bearer Token given from Login. </p>
+<p>The Business can check their account balances, using the Bearer Token given from Login. </p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/checkingAccount/:companyID</code></p>
 
@@ -2926,7 +2928,7 @@
     </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.mercadopago.com/mla/checkout/start?pref_id=111111111"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The users can add funds to their MercadoPago accounts using the companyID and total. The &#39;total&#39; parameter is given from &#39;Get Checking Account&#39; endpoint.</p>
+<p>The Business can add funds to their Ando.la accounts, through their MercadoPago accounts, using the companyID and total (funds to add to account). Will send a link with MercadoPago payment gateway in order to add funds.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/checkingAccount/:companyID/balance/mercadoPago</code></p>
 
@@ -2958,7 +2960,7 @@
 </tr>
 <tr>
 <td>total</td>
-<td>Account balance given from Get Checking Account Endpoint</td>
+<td>Funds to add to account.</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>

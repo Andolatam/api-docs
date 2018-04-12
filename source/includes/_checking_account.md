@@ -1,5 +1,7 @@
 #Checking Account
 
+Only the Business can get a Checking Account in Ando.la, whom must send an email to <soporte@ando.la> in order to activate it. 
+
 ##Get Checking Account
 
 ```shell
@@ -135,7 +137,7 @@ Response Example
 }
 ```
 
-The users can check their account balances, using the Bearer Token given from Login. 
+The Business can check their account balances, using the Bearer Token given from Login. 
 
 ### HTTP Request
 
@@ -303,7 +305,7 @@ Response Example
 }
 ```
 
-The users can add funds to their MercadoPago accounts using the companyID and total. The 'total' parameter is given from 'Get Checking Account' endpoint.
+The Business can add funds to their Ando.la accounts, through their MercadoPago accounts, using the companyID and total (funds to add to account). Will send a link with MercadoPago payment gateway in order to add funds.
 
 ### HTTP Request
 
@@ -319,4 +321,4 @@ Content-type | application/json
 Parameter | Description
 --------- | -----------
 companyID | ID of the company to check.
-total     | Account balance given from Get Checking Account Endpoint
+total     | Funds to add to account.
