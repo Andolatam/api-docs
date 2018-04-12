@@ -134,6 +134,17 @@ func main() {
 
 }
 ```
+
+```json
+Response Example
+{
+    "status": 200,
+    "message": [
+        [{"An Object with information about your cards"}]
+    ]
+}
+```
+
 The users can get information of their credit cards. If exist, will return a JSON file with information about cards, else will return an error.
 
 ### HTTP Request
@@ -319,7 +330,7 @@ Request Example
   "cardType":"VISA"
 }
 ```
-The users can add a credit card to their accounts. If it's valid, will return a JSON file with information about cards, else will return an error.
+The users can add a credit card to their accounts. If it's valid, will return a JSON file with information about user's card, else will return an error.
  
 
 ### HTTP Request
@@ -493,10 +504,15 @@ func main() {
 ```json
 Request Example
 {
-  "cardId":12
+  "cardId":12345678
+}
+Response Example
+{
+    "status": 200,
+    "message": "Credit Card deleted succesfully"
 }
 ```
-The users can delete an specific Credit Card. If exist, will return a JSON file with information about cards, else will return an error.
+The users can delete an specific Credit Card. In order to delete a card, the user needs a specific cardId parameter, which is returned by a card of 'Get All Cards' Endpoint. If exist, will return a JSON file with a success message, else will return an error.
 
 
 ### HTTP Request
