@@ -1121,6 +1121,13 @@
     </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
 
 </span><span class="p">}</span><span class="x">
+</span></code></pre><pre class="highlight json tab-json"><code><span class="err">Response</span><span class="w"> </span><span class="err">Example</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[{</span><span class="s2">"An Object with information about your cards"</span><span class="p">}]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The users can get information of their credit cards. If exist, will return a JSON file with information about cards, else will return an error.</p>
 <h3 id='http-request'>HTTP Request</h3>
@@ -1293,7 +1300,7 @@
   </span><span class="s2">"cardType"</span><span class="p">:</span><span class="s2">"VISA"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The users can add a credit card to their accounts. If it&#39;s valid, will return a JSON file with information about cards, else will return an error.</p>
+<p>The users can add a credit card to their accounts. If it&#39;s valid, will return a JSON file with information about user&#39;s card, else will return an error.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/user/paymentMethods/add</code></p>
 
@@ -1480,10 +1487,15 @@
 </span><span class="p">}</span><span class="x">
 </span></code></pre><pre class="highlight json tab-json"><code><span class="err">Request</span><span class="w"> </span><span class="err">Example</span><span class="w">
 </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"cardId"</span><span class="p">:</span><span class="mi">12</span><span class="w">
+  </span><span class="s2">"cardId"</span><span class="p">:</span><span class="mi">12345678</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="err">Response</span><span class="w"> </span><span class="err">Example</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit Card deleted succesfully"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The users can delete an specific Credit Card. If exist, will return a JSON file with information about cards, else will return an error.</p>
+<p>The users can delete an specific Credit Card. In order to delete a card, the user needs a specific cardId parameter, which is returned by a card of &#39;Get All Cards&#39; Endpoint. If exist, will return a JSON file with a success message, else will return an error.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>DELETE https://api.ando.la/v1/user/paymentMethods/remove</code></p>
 
