@@ -2767,7 +2767,7 @@
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLED"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The users can check their account balances, using the Bearer Token given from Login. The total (account balance) given from this endpoint is needed in order to add funds to a MercadoPago account.   </p>
+<p>The users can check their account balances, using the Bearer Token given from Login. </p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.ando.la/v1/checkingAccount/:companyID</code></p>
 
@@ -2926,7 +2926,7 @@
     </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.mercadopago.com/mla/checkout/start?pref_id=111111111"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The users can add funds to their MercadoPago accounts using the companyID and total (account balance). The &#39;total&#39; parameter is given from &#39;Get Checking Account&#39; endpoint.</p>
+<p>The users can add funds to their MercadoPago accounts using the companyID and total. The &#39;total&#39; parameter is given from &#39;Get Checking Account&#39; endpoint.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.ando.la/v1/checkingAccount/:companyID/balance/mercadoPago</code></p>
 
