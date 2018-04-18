@@ -10,7 +10,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - go
 
 toc_footers:
-  - <a href='mailto:developers@ando.la?subject=Solicitud de API Key&body=Hola, mi nombre es _____________ y solicito una API Key para desarrollar ________________________________________ para la empresa _______________ radicada en ____________________ . Mi email de contacto es __________________ y telefono __________________ .'>Request Full API Access</a>
+  - <a href='mailto:Development@ando.la?subject=Solicitud de API Key&body=Hola, mi nombre es _____________ y solicito una API Key para desarrollar ________________________________________ para la empresa _______________ radicada en ____________________ . Mi email de contacto es __________________ y telefono __________________ .'>Request Full API Access</a>
 
 includes:
   - authentication
@@ -33,4 +33,4 @@ Ando uses OAuth2 to allow access to the API. You can access to the APIs using yo
 
 If you need additional technical support in order to use this documentation, you can ask it through [the following email](mailto:Development@ando.la?subject=Ando API)
 
-You can access to our Sandbox in order to try our endpoints through [the following web address](https://sandbox.ando.la/v1)
+You can access to our Sandbox in order to try our endpoints using [the following web address](sandbox.ando.la)
