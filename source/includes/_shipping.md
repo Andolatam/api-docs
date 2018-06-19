@@ -426,6 +426,8 @@ Parameter | Description
 --------- | -----------
 shipFrom_addressStreet | Street Address of the sender of the package.
 shipFrom_addressNumber | Street Number of the sender of the package.
+shipFrom_addressFloor (optional) | Location floor of the sender (string)
+shipFrom_addressApt (optional) | Location number of the sender (string)
 shipFrom_city | City of the sender of the package.
 shipFrom_province | Province of the sender of the package.
 shipFrom_country | Country of the sender of the package.
@@ -435,6 +437,8 @@ shipTo_email (optional) | Email of the receiver of the package.
 shipTo_phone | Phone number of the receiver of the package.
 shipTo_addressStreet | Street Address of the receiver of the package.
 shipTo_addressNumber | Street Number of the receiver of the package.
+shipTo_addressFloor (optional) | Location floor of the receiver (string)
+shipTo_addressApt (optional) | Location number of the receiver (string)
 shipTo_city | City of the receiver of the package.
 shipTo_province (optional) | Province of the receiver of the package.
 shipTo_country | Country of the receiver of the package.
