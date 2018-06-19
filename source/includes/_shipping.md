@@ -216,17 +216,12 @@ curl --request POST \
 	"shipTo_addressStreet":"Guemes",
 	"shipTo_addressNumber":"4424",
 	"shipTo_city":"Buenos Aires",
-	"shipTo_province":"Buenos Aires",
 	"shipTo_country":"Argentina",
 	"shipTo_instructions":"Something.",
 	"packageWidth":2,
 	"packageLarge":2,
 	"packageHeight":2,
-	"packageWeight":1,
-  "sender_userID":1,
-	"shippingMethod":"MOTO",
-	"digitalSignature":false,
-	"currency":"ARS"
+	"packageWeight":1
 }'
 ```
 
@@ -273,17 +268,13 @@ req.write(JSON.stringify({ shipFrom_province: 'Buenos Aires',
   shipTo_addressStreet: 'Guemes',
   shipTo_addressNumber: '4424',
   shipTo_city: 'Buenos Aires',
-  shipTo_province: 'Buenos Aires',
   shipTo_country: 'Argentina',
   shipTo_instructions: 'Something.',
   packageWidth: 2,
   packageLarge: 2,
   packageHeight: 2,
-  packageWeight: 1,
-  sender_userID:1,
-  shippingMethod: 'MOTO',
-  digitalSignature: false,
-  currency: 'ARS' }));
+  packageWeight: 1
+ }));
 req.end();
 ```
 
@@ -298,7 +289,7 @@ http = Net::HTTP.new(url.host, url.port)
 request = Net::HTTP::Post.new(url)
 request["Content-Type"] = 'application/json'
 request["Authorization"] = 'Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw'
-request.body = "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1,\r\n\t\"senderUserID_\":1, \r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\"}"
+request.body = "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1}"
 
 response = http.request(request)
 puts response.read_body
@@ -309,7 +300,7 @@ import requests
 
 url = "https://api.ando.la/v1/shipment/quote"
 
-payload = "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1, \r\n\t\"senderUserID_\":1,\r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\"}"
+payload = "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1}"
 headers = {
     'Content-Type': "application/json",
     'Authorization': "Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw"
@@ -333,7 +324,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1, \r\n\t\"senderUserID_\":1, \r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\"}",
+  CURLOPT_POSTFIELDS => "{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\",\r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1}",
   CURLOPT_HTTPHEADER => array(
     "Authorization: Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw",
     "Content-Type: application/json"
@@ -366,7 +357,7 @@ func main() {
 
 	url := "https://api.ando.la/v1/shipment/quote"
 
-	payload := strings.NewReader("{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\", \r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_province\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1,\r\n\t\"shippingMethod\":\"MOTO\",\r\n\t\"digitalSignature\":false,\r\n\t\"currency\":\"ARS\"}")
+	payload := strings.NewReader("{  \r\n\t\"shipFrom_province\":\"Buenos Aires\",\r\n\t\"shipFrom_addressStreet\":\"El Salvador\",\r\n\t\"shipFrom_addressNumber\":\"5218\", \r\n\t\"shipFrom_city\":\"Buenos Aires\",\r\n\t\"shipFrom_country\":\"Argentina\",\r\n\t\"shipTo_firstName\":\"Name\",\r\n\t\"shipTo_lastName\":\"LastName\", \r\n\t\"shipTo_phone\":\"000000000\",\r\n\t\"shipTo_addressStreet\":\"Guemes\",\r\n\t\"shipTo_addressNumber\":\"4424\", \r\n\t\"shipTo_city\":\"Buenos Aires\",\r\n\t\"shipTo_country\":\"Argentina\",\r\n\t\"shipTo_instructions\":\"Something.\",\r\n\t\"packageWidth\":2,\r\n\t\"packageLarge\":2,\r\n\t\"packageHeight\":2,\r\n\t\"packageWeight\":1}")
 
 	req, _ := http.NewRequest("POST", url, payload)
 
@@ -397,17 +388,12 @@ Request Example
 	"shipTo_addressStreet":"Guemes",
 	"shipTo_addressNumber":"4424",
 	"shipTo_city":"Buenos Aires",
-	"shipTo_province":"Buenos Aires",
 	"shipTo_country":"Argentina",
 	"shipTo_instructions":"Something.",
 	"packageWidth":2,
 	"packageLarge":2,
 	"packageHeight":2,
-	"packageWeight":1,
-  "sender_userID":1,
-	"shippingMethod":"MOTO",
-	"digitalSignature":false,
-	"currency":"ARS",
+	"packageWeight":1
 }
 Response Example
 {
@@ -450,7 +436,7 @@ shipTo_phone | Phone number of the receiver of the package.
 shipTo_addressStreet | Street Address of the receiver of the package.
 shipTo_addressNumber | Street Number of the receiver of the package.
 shipTo_city | City of the receiver of the package.
-shipTo_province | Province of the receiver of the package.
+shipTo_province (optional) | Province of the receiver of the package.
 shipTo_country | Country of the receiver of the package.
 shipTo_instructions | Special instructions for the rider when delivering the package.
 packageWidth | Integer (in cm).
@@ -458,10 +444,9 @@ packageLarge | Integer (in cm).
 packageHeight | Integer (in cm).
 packageWeight | Integer (in grams).
 sender_email (optional) | Email of the receiver of the package.
-sender_userID | Integer (ID of sender).
-shippingMethod | Shipping Method can be `MOTO` or `BICICLETA`
-digitalSignature | Boolean (`true` or `false`), indicates if a digital signature is required by the receiver.
-currency | Currency of the price of this shipment.
+shippingMethod (optional) | Shipping Method can be `MOTO` or `BICICLETA`
+digitalSignature (optional) | Boolean (`true` or `false`), indicates if a digital signature is required by the receiver.
+currency (optional) | Currency of the price of this shipment.
 
 ## New Shipment
 
