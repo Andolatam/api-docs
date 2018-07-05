@@ -17,6 +17,7 @@ includes:
   - account
   - billing
   - shipping
+  - multishipping
   - checking_account
   - errors
 

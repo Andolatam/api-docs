@@ -1003,4 +1003,6 @@ Content-type | application/json
 
 Parameter | Description
 --------- | -----------
-trackingID | `trackingID` Provided after the confirmation of the new shipment.
+trackingID | `Integer` Provided after the confirmation of the new shipment.
+
+
