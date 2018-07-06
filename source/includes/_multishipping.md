@@ -474,7 +474,6 @@ Response Example
 "webhook": 
 [ 
   { "id": 13349,
-   "riderID": 1,
    "creatorID": 306,
    "status": { 
      "statusCode": 23, 
