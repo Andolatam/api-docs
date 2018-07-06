@@ -3021,6 +3021,18 @@
 <td><code>String</code> Instructions given by receiver.</td>
 </tr>
 <tr>
+<td>orderNumber: (OPTIONAL)</td>
+<td><code>String</code> Number of order.</td>
+</tr>
+<tr>
+<td>floor: (OPTIONAL)</td>
+<td><code>String</code> Floor number of receiver.</td>
+</tr>
+<tr>
+<td>apartment: (OPTIONAL)</td>
+<td><code>String</code> Apartment number of receiver.</td>
+</tr>
+<tr>
 <td>---------</td>
 <td>-----------</td>
 </tr>
@@ -3065,20 +3077,16 @@
 <td><code>String</code> Currency used in payment.</td>
 </tr>
 <tr>
-<td>sender_email: (OPTIONAL)</td>
-<td><code>String</code> Email of sender.</td>
-</tr>
-<tr>
-<td>order_number: (OPTIONAL)</td>
-<td><code>String</code> Number of order.</td>
-</tr>
-<tr>
 <td>shipFrom_Instructions: (OPTIONAL)</td>
 <td><code>String</code> Instructions given by sender.</td>
 </tr>
 <tr>
-<td>returnToOrigin: (OPTIONAL)</td>
-<td><code>Boolean</code> If <code>true</code> the package must be return to origin.</td>
+<td>floor: (OPTIONAL)</td>
+<td><code>String</code> Floor number of sender.</td>
+</tr>
+<tr>
+<td>apartment: (OPTIONAL)</td>
+<td><code>String</code> Apartment number of sender.</td>
 </tr>
 </tbody></table>
 <h2 id='get-multishipment-by-id'>Get Multishipment By ID</h2><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>

@@ -323,6 +323,9 @@ country:  | `String`     Country of receiver.
 province: | `String`     Province of receiver.
 phone:    | `String`     Phone of receiver.
 instructions:  | `String` Instructions given by receiver.
+orderNumber: (OPTIONAL)| `String` Number of order.
+floor: (OPTIONAL)| `String` Floor number of receiver.
+apartment: (OPTIONAL)| `String` Apartment number of receiver.
 --------- | -----------
 shipFrom_city:          | `String` City of sender.
 shipFrom_country:       | `String` Country number of sender.
@@ -334,10 +337,9 @@ packageLarge:           | `Double` Large of package.
 packageHeight:          | `Double` Height of package.
 packageWeight:          | `Double` Weight of package.
 currency:               | `String` Currency used in payment.
-sender_email: (OPTIONAL)| `String` Email of sender.
-order_number: (OPTIONAL)| `String` Number of order.
 shipFrom_Instructions: (OPTIONAL) | `String` Instructions given by sender.
-returnToOrigin: (OPTIONAL)        | `Boolean` If `true` the package must be return to origin. 
+floor: (OPTIONAL)| `String` Floor number of sender.
+apartment: (OPTIONAL)| `String` Apartment number of sender.
 
 ## Get Multishipment By ID
 
