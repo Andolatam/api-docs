@@ -274,7 +274,7 @@ Response Example
         "userNameTo": "Ulises",
         "type": "LS",
         "try": 0,
-        "parentID": 13321
+        "multishipmentID": 13321
     },
     {
         "id": 13323,
@@ -291,7 +291,7 @@ Response Example
         "userNameTo": "Claudia",
         "type": "LS",
         "try": 0,
-        "parentID": 13321
+        "multishipmentID": 13321
     }
 ]
 ```
