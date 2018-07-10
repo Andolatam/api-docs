@@ -43,27 +43,27 @@ var req = http.request(options, function (res) {
 req.write(JSON.stringify({ 
     shipTo: [
         {
-            firstName: 'Ulises',
-            lastName:  'Vargas',
-            email:     'ulisesv@email.com',
+            firstName: 'John',
+            lastName:  'Doe',
+            email:     'user@email.com',
             phone:     '123456789',
-            addressStreet: 'Falsa',
+            addressStreet: 'Belgrano',
             addressNumber:  '123',
-            city:           'Caracas',
-            country:        'Venezuela',
-            province:       'Distrito Federal',
+            city:           'Buenos Aires',
+            country:        'Argentina',
+            province:       'CABA',
             instructions:   'Dejar en el buzón'
         },
         {
-            firstName: 'Claudia',
-            lastName:  'Cerda',
-            email:     'claudiac@email.com',
+            firstName: 'Jane',
+            lastName:  'Doe',
+            email:     'user@email.com',
             phone:     '123456789',
-            addressStreet: 'Falsa2',
+            addressStreet: '9 de julio',
             addressNumber:  '123',
-            city:           'Caracas',
-            country:        'Venezuela',
-            province:       'Distrito Federal',
+            city:           'Buenos Aires',
+            country:        'Argentina',
+            province:       'CABA',
             instructions:   'Tocar timbre'
         }
     ],
@@ -95,25 +95,25 @@ request["Content-Type"] = 'application/json'
 request["Authorization"] = 'Bearer TxuLf62rVjOrNPiGfqSkrccTkLJFHVAmafOjsZd_n8N-LgpcCe47gS-6hfN2iEcstgz_S63B3lYdbQvlD8uRYNQHEuez3dQisNp3gVlwHh27pDtCX2-d4bKnDo20_VRVO9V2PX-6xkA6YH3aSHp1SKOeQ-lYMdt-Y-NvIuRhHzrNrSZTN_qPVrEq3-hiTlgXk670chAAoeVufK8mKIYcljgAMZRPxSDZ0J0vaci8aPd0PG8N-sNPe5vq_y5DEIqVOjSHL7H4ubyzpkl2-JxIyO5B7ldDIse_jmxjWXmScmw'
 request.body = "{\r\n \"shipTo\":\r\n[
 \r\n{\r\n
-\"firstName\":\"Ulises\",\"lastName\":\"Vargas\",\r\n
-\"email\":\"ulisesv@email.com\",\r\n
+\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n
+\"email\":\"user@email.com\",\r\n
 \"phone\":\"123456789\",\r\n
-\"addressStreet\":\"Falsa\",\r\n
+\"addressStreet\":\"Belgrano\",\r\n
 \"addressNumber\":\"123\",\r\n
-\"city\":\"Caracas\",\r\n
-\"country\":\"Venezuela\",\r\n
-\"province\":\"Distrito Federal\",\r\n
+\"city\":\"Buenos Aires\",\r\n
+\"country\":\"Argentina\",\r\n
+\"province\":\"CABA\",\r\n
 \"instructions\":\"Dejar en el buzón\"\r\n
 },\r\n{
-\"firstName\":\"Claudia\",\r\n
-\"lastName\":\"Cerda\",\r\n
-\"email\":\"claudiac@email.com\",\r\n
+\"firstName\":\"Jane\",\r\n
+\"lastName\":\"Doe\",\r\n
+\"email\":\"user@email.com\",\r\n
 \"phone\":\"123456789\",\r\n
-\"addressStreet\":\"Falsa2\",\r\n
+\"addressStreet\":\"9 de julio\",\r\n
 \"addressNumber\":\"123\",\r\n
-\"city\":\"Caracas\",\r\n
-\"country\":\"Venezuela\",\r\n
-\"province\":\"Distrito Federal\",\r\n
+\"city\":\"Buenos Aires\",\r\n
+\"country\":\"Argentina\",\r\n
+\"province\":\"CABA\",\r\n
 \"instructions\":\"Tocar timbre\"\r\n
 }\r\n],\r\n
 \"shipFrom_city\":\"Buenos Aires\",\r\n
@@ -136,7 +136,7 @@ import requests
 
 url = "https://api.ando.la/v1/enterprise/shipments"
 
-payload = "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"Ulises\",\"lastName\":\"Vargas\",\r\n\"email\":\"ulisesv@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Falsa\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Caracas\",\r\n\"country\":\"Venezuela\",\r\n\"province\":\"Distrito Federal\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Claudia\",\r\n\"lastName\":\"Cerda\",\r\n\"email\":\"claudiac@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Falsa2\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Caracas\",\r\n\"country\":\"Venezuela\",\r\n\"province\":\"Distrito Federal\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",\r\n\"shipFrom_province\":\"CABA\",\r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}"
+payload = "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",\r\n\"shipFrom_province\":\"CABA\",\r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}"
 
 headers = {
     'Content-Type': "application/json",
@@ -162,7 +162,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"Ulises\",\"lastName\":\"Vargas\",\r\n\"email\":\"ulisesv@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Falsa\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Caracas\",\r\n\"country\":\"Venezuela\",\r\n\"province\":\"Distrito Federal\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Claudia\",\r\n\"lastName\":\"Cerda\",\r\n\"email\":\"claudiac@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Falsa2\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Caracas\",\r\n\"country\":\"Venezuela\",\r\n\"province\":\"Distrito Federal\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
+  CURLOPT_POSTFIELDS => "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
   \r\n\"shipFrom_province":\"CABA\",
   \r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}",
   CURLOPT_HTTPHEADER => array(
@@ -198,7 +198,7 @@ func main() {
 
 	url := "https://api.ando.la/v1/enterprise/shipments"
 
-  payload := strings.NewReader("{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"Ulises\",\"lastName\":\"Vargas\",\r\n\"email\":\"ulisesv@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Falsa\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Caracas\",\r\n\"country\":\"Venezuela\",\r\n\"province\":\"Distrito Federal\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Claudia\",\r\n\"lastName\":\"Cerda\",\r\n\"email\":\"claudiac@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Falsa2\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Caracas\",\r\n\"country\":\"Venezuela\",\r\n\"province\":\"Distrito Federal\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
+  payload := strings.NewReader("{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
   \r\n\"shipFrom_province\":\"CABA\",\r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}")
 
 	req, _ := http.NewRequest("POST", url, payload)
@@ -222,27 +222,27 @@ Request Example
 {
   "shipTo": [
         {
-            "firstName": "Ulises",
-            "lastName":  "Vargas",
-            "email":     "ulisesv@email.com",
+            "firstName": "John",
+            "lastName":  "Doe",
+            "email":     "user@email.com",
             "phone":     "123456789",
-            "addressStreet": "Falsa",
+            "addressStreet": "Belgrano",
             "addressNumber":  "123",
-            "city":           "Caracas",
-            "country":        "Venezuela",
-            "province":       "Distrito Federal",
+            "city":           "Buenos Aires",
+            "country":        "Argentina",
+            "province":       "CABA",
             "instructions":   "Dejar en el buzón"
         },
         {
-            "firstName": "Claudia",
-            "lastName":  "Cerda",
-            "email":     "claudiac@email.com",
+            "firstName": "Jane",
+            "lastName":  "Doe",
+            "email":     "user@email.com",
             "phone":     "123456789",
-            "addressStreet": "Falsa2",
+            "addressStreet": "9 de julio",
             "addressNumber":  "123",
-            "city":           "Caracas",
-            "country":        "Venezuela",
-            "province":       "Distrito Federal",
+            "city":           "Buenos Aires",
+            "country":        "Argentina",
+            "province":       "CABA",
             "instructions":   "Tocar timbre"
         }
     ],
@@ -266,12 +266,12 @@ Response Example
         "placeToID": 26223,
         "activationDate": "2018-07-06T16:32:14.313Z",
         "userToID": 306,
-        "mailUserTo": "ulisesv@email.com",
+        "mailUserTo": "user@email.com",
         "userToPhone": "123456789",
         "shipmentNumber": "",
         "creatorUserId": 306,
-        "userSurnameTo": "Vargas",
-        "userNameTo": "Ulises",
+        "userSurnameTo": "Doe",
+        "userNameTo": "John",
         "type": "LS",
         "try": 0,
         "multishipmentID": 13321
@@ -283,12 +283,12 @@ Response Example
         "placeToID": 26224,
         "activationDate": "2018-07-06T16:32:14.313Z",
         "userToID": 306,
-        "mailUserTo": "claudiac@email.com",
+        "mailUserTo": "user@email.com",
         "userToPhone": "123456789",
         "shipmentNumber": "",
         "creatorUserId": 306,
-        "userSurnameTo": "Cerda",
-        "userNameTo": "Claudia",
+        "userSurnameTo": "Doe",
+        "userNameTo": "Jane",
         "type": "LS",
         "try": 0,
         "multishipmentID": 13321
