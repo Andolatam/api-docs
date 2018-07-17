@@ -3,9 +3,7 @@
 ```json
 Response Example
 {
-"webhook": 
-[ 
-  { "id": 13349,
+   "id": 13349,
    "creatorID": 306,
    "status": { 
      "statusCode": 23, 
@@ -13,13 +11,11 @@ Response Example
     },
    "total": 123,
    "MultishipmentByID": "13348",
-   "orderNumber": "customOrderNumber"
-   } 
-]
+   "orderNumber": "customOrderNumber" 
 }
 ```
 
-The users will receive an array with information about their shipments with multiple destinations. In order to add a new webhook, you must send an email to `soporte@ando.la` with the subject `API-WEBHOOK`. 
+The users will receive an object with information about their shipments with multiple destinations. In order to receive it, you must send a Bearer Token in Authorization Header, which is given by request, sending an email to `soporte@ando.la`. Only in case that shipment status be "Cancelled", the object will return an extra property called `cancelReason`, that indicates the reason because was cancelled.  In order to add a new webhook, you must send an email to `soporte@ando.la` with the subject `API-WEBHOOK`
 
 ### Status Codes
 
