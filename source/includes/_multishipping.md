@@ -51,8 +51,7 @@ req.write(JSON.stringify({
             addressNumber:  '123',
             city:           'Buenos Aires',
             country:        'Argentina',
-            province:       'CABA',
-            instructions:   'Dejar en el buzón'
+            province:       'CABA'
         },
         {
             firstName: 'Jane',
@@ -63,8 +62,7 @@ req.write(JSON.stringify({
             addressNumber:  '123',
             city:           'Buenos Aires',
             country:        'Argentina',
-            province:       'CABA',
-            instructions:   'Tocar timbre'
+            province:       'CABA'
         }
     ],
     shipFrom_city: 'Buenos Aires',
@@ -103,7 +101,6 @@ request.body = "{\r\n \"shipTo\":\r\n[
 \"city\":\"Buenos Aires\",\r\n
 \"country\":\"Argentina\",\r\n
 \"province\":\"CABA\",\r\n
-\"instructions\":\"Dejar en el buzón\"\r\n
 },\r\n{
 \"firstName\":\"Jane\",\r\n
 \"lastName\":\"Doe\",\r\n
@@ -136,7 +133,7 @@ import requests
 
 url = "https://api.ando.la/v1/enterprise/shipments"
 
-payload = "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",\r\n\"shipFrom_province\":\"CABA\",\r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}"
+payload = "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\"},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\"}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",\r\n\"shipFrom_province\":\"CABA\",\r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}"
 
 headers = {
     'Content-Type': "application/json",
@@ -162,7 +159,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
+  CURLOPT_POSTFIELDS => "{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\"},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\"}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
   \r\n\"shipFrom_province":\"CABA\",
   \r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}",
   CURLOPT_HTTPHEADER => array(
@@ -198,7 +195,7 @@ func main() {
 
 	url := "https://api.ando.la/v1/enterprise/shipments"
 
-  payload := strings.NewReader("{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Dejar en el buzón\"\r\n},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\",\r\n\"instructions\":\"Tocar timbre\"\r\n}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
+  payload := strings.NewReader("{\r\n \"shipTo\":\r\n[\r\n{\r\n\"firstName\":\"John\",\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"Belgrano\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\"},\r\n{\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"email\":\"user@email.com\",\r\n\"phone\":\"123456789\",\r\n\"addressStreet\":\"9 de julio\",\r\n\"addressNumber\":\"123\",\r\n\"city\":\"Buenos Aires\",\r\n\"country\":\"Argentina\",\r\n\"province\":\"CABA\"}\r\n],\r\n\"shipFrom_city\":\"Buenos Aires\",\r\n\"shipFrom_country\":\"Argentina\",\r\n\"shipFrom_addressStreet\":\"Rivadavia\",
   \r\n\"shipFrom_province\":\"CABA\",\r\n\"shipFrom_addressNumber\":\"123\",\r\n\"packageWidth\":22.50,\r\n\"packageLarge\":22.50,\r\n\"packageHeight\":22.50,\r\n\"packageWeight\":1.00,\r\n\"currency: 'USD'\"\r\n}")
 
 	req, _ := http.NewRequest("POST", url, payload)
@@ -230,8 +227,7 @@ Request Example
             "addressNumber":  "123",
             "city":           "Buenos Aires",
             "country":        "Argentina",
-            "province":       "CABA",
-            "instructions":   "Dejar en el buzón"
+            "province":       "CABA"
         },
         {
             "firstName": "Jane",
@@ -242,8 +238,7 @@ Request Example
             "addressNumber":  "123",
             "city":           "Buenos Aires",
             "country":        "Argentina",
-            "province":       "CABA",
-            "instructions":   "Tocar timbre"
+            "province":       "CABA"
         }
     ],
     "shipFrom_city": "Buenos Aires",
@@ -322,7 +317,7 @@ city:     | `String`     City of receiver.
 country:  | `String`     Country of receiver.
 province: | `String`     Province of receiver.
 phone:    | `String`     Phone of receiver.
-instructions:  | `String` Instructions given by receiver.
+instructions: (OPTIONAL)  | `String` Instructions given by receiver.
 orderNumber: (OPTIONAL)| `String` Number of order.
 floor: (OPTIONAL)| `String` Floor number of receiver.
 apartment: (OPTIONAL)| `String` Apartment number of receiver.
